@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 import * as routes from '../../routes';
 
 class AuthRedirect extends React.Component {
@@ -10,10 +11,12 @@ class AuthRedirect extends React.Component {
     const { pathname } = location;
 
     let destinationRoute = null;
+    let loggedIn = false;
+    if (localStorage.getItem('token') || token) loggedIn = true;
 
     if (pathname === routes.LOGIN || pathname === routes.SIGNUP || pathname === routes.LANDING) {
-      if (token) destinationRoute = routes.DASHBOARD;
-    } else if (!token) {
+      if (loggedIn) destinationRoute = routes.DASHBOARD;
+    } else if (!loggedIn) {
       destinationRoute = routes.LANDING;
     }
 

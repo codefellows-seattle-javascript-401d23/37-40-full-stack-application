@@ -14,7 +14,8 @@ export const signupRequest = user => (store) => {
   return superagent.post(`${API_URL}${routes.SIGNUP}`)
     .send(user)
     .then((response) => {
-      return store.dispatch(setToken(response.text));
+      const { token } = JSON.parse(response.text);
+      return store.dispatch(setToken(token));
     });
 };
 
@@ -22,6 +23,7 @@ export const loginRequest = user => (store) => {
   return superagent.get(`${API_URL}${routes.LOGIN}`)
     .auth(user.username, user.password)
     .then((response) => {
-      return store.dispatch(setToken(response.text));
+      const { token } = JSON.parse(response.text);
+      return store.dispatch(setToken(token));
     });
 };
