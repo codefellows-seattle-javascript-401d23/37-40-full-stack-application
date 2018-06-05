@@ -18,7 +18,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HTMLWebpackPlugin({
-    title: 'My Podcasts',
+    title: 'PubHub',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),
