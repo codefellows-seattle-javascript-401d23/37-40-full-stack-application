@@ -20,7 +20,7 @@ export const removeTokenAction = () => ({
 export const signupRequest = user => (store) => {
   return superagent.post(`${API_URL}${routes.SIGNUP_ROUTE}`)
     .send(user)
-    .withCredentials()
+    // .withCredentials()
     .then((response) => {
       return store.dispatch(setTokenAction(response.text));
     });
@@ -30,7 +30,7 @@ export const signupRequest = user => (store) => {
 export const loginRequest = user => (store) => {
   return superagent.get(`${API_URL}${routes.LOGIN_ROUTE}`)
     .auth(user.username, user.password)
-    .withCredentials()
+    // .withCredentials()
     .then((response) => {
       return store.dispatch(setTokenAction(response.text));
     });

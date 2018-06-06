@@ -3,6 +3,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cowsay from 'cowsay';
+import cors from 'cors';
 import logger from './logger';
 import crawlRoutes from '../route/crawl-route';
 import stopRoutes from '../route/stop-route';
@@ -17,6 +18,7 @@ const { MessagingResponse } = require('twilio').twiml;
 const app = express();
 let server = null;
 
+app.use(cors());
 app.use(loggerMiddleware);
 app.use(searchRoute);
 app.use(stopRoutes);

@@ -5,7 +5,7 @@
   "main": "webpack.common.js",
   "scripts": {
     "watch": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest"
+    "test": "eslint . && jest --coverage --forceExit --runInBand"
   },
   "repository": {
     "type": "git",
