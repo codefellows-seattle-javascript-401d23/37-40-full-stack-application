@@ -36,7 +36,7 @@ class AuthLanding extends React.Component {
   render() {
     const rootJSX = <div>
       <h2> PubHub </h2>
-      <Link to='/sign up'>sign up</Link>
+      <Link to='/signup'>sign up</Link>
       <br/>
       <Link to='/login'>LOGIN</Link>
     </div>;
