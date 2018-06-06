@@ -10,7 +10,6 @@ import Plant from '../model/plant';
 import bearerAuthMiddleware from '../lib/bearer-auth-middleware';
 import logger from '../lib/logger';
 import { s3Upload } from '../lib/s3';
-import sendText from '../lib/send-sms';
 
 const jsonParser = json();
 const multerUpload = multer({ dest: `${__dirname}/../temp` });
@@ -61,14 +60,14 @@ profileRouter.get('/profile/:id/needswater', bearerAuthMiddleware, (request, res
             const water = selectedPlant.isTimeToWater();
             if (water) {
               const needsWaterToday = 'You have plants that need to be watered today.';
-              sendText(resObj.profile, needsWaterToday);
+              // sendText(resObj.profile, needsWaterToday);
               return response.json(needsWaterToday);
             }
             return undefined;
           });
       });
       const noWaterToday = 'You have no plants that need watering today.';
-      sendText(resObj.profile, noWaterToday);
+      // sendText(resObj.profile, noWaterToday);
       return response.json(noWaterToday);
     })
     .catch(next);
