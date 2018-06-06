@@ -40,6 +40,7 @@ Back-end:
     PORT=3000
     NODE_ENV=development
     MONGODB_URI=mongodb://localhost/testing
+    SECRET='longrandomstring'
     
 Front-end:
 
