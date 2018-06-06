@@ -1,42 +1,17 @@
 # 401 JS --  Lab 37 Full-Stack Auth
+## Install the following npm packages before using this application:
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+```npm i -D sass-loader node-sass css-loader style-loader html-webpack-plugin webpack webpack-cli webpack-dev-server webpack-merge babel-eslint babel-core babel-loader babel-preset-env babel-preset-react babel-preset-stage-0 react react-dom dotenv eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-jest eslint-plugin-react babel-plugin-transform-react-jsx-source file-loader superagent mini-css-extract-plugin react-router-dom prop-types react-test-renderer redux react-redux redux-devtools-extension redux-mock-store```
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+## How to get things up and running
+You will need to run **Nodemon** and **mongodb** to display data from your backend.  You will need to run **npm run watch** to display your localhost:3000 frontend data.  
+## Request Info
+Async and Sync requests are found from **src/actions/auth.js** and consist of both a superagent.get and superagent.post route to the **API_URL**.  Please set and store your frontend server info and backend server info in the appropriate **.env** module.
 
-#### Components
-```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
-```
+## Local Storage
+The username and password are stored via local storage.  Both will be cleared upon refreshing the browser.
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+## User Experience
+A user with no account will only be able to view the landing page.  The message "Sign up to our app" will be displayed. 
 
-##  Documentation  
-Write a description of the project in your README.md
+A user who successfully logs in with their account, will see the message: "You can only see this if you are logged in"

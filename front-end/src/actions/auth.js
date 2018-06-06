@@ -34,12 +34,3 @@ export const loginRequest = user => (store) => {
       return store.dispatch(setTokenAction(response.text));
     });
 };
-
-export const reporterRequest = user => (store) => {
-  return superagent.post(`${API_URL}${routes.SIGNUP_ROUTE}`)
-    .send(user)
-    .withCredentials()
-    .then((response) => {
-      return store.dispatch(setTokenAction(response.text));
-    });
-};
