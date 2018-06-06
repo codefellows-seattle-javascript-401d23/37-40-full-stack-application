@@ -52,8 +52,6 @@ class AuthForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          {signupRenderedJSX}
-
           <input
             name='password'
             placeholder='password'
@@ -61,6 +59,8 @@ class AuthForm extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
+
+          {signupRenderedJSX}
 
           <button type='submit'>{type}</button>
         </form>
