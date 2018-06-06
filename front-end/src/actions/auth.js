@@ -9,7 +9,7 @@ export const setTokenAction = token => ({
   payload: token,
 });
 
-export const removeTokenAction = () =>  ({
+export const removeTokenAction = () => ({
   type: 'TOKEN_REMOVE',
 });
 

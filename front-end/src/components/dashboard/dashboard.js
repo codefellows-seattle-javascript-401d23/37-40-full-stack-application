@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Dashboard extends React.Component {
-  render(){
+  render() {
     return (
       <div className='dashboard'>
         <h1>Hello from Dashboard</h1>

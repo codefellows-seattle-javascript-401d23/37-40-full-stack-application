@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as routes from '../../routes';
-import {ROOT_ROUTE} from "../../routes";
+// import { ROOT_ROUTE } from '../../routes';
 
 class AuthRedirect extends React.Component {
   render() {

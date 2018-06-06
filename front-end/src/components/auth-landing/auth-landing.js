@@ -39,14 +39,14 @@ class AuthLanding extends React.Component {
   render() {
     const rootJSX = <div>
       <h2> Welcome to our app</h2>
-      <Link to='/signup'>Sign up to our app</Link>
+      <Link to='/signup'>Sign up for our app</Link>
       <Link to='/login'>Login to our app</Link>
     </div>
 
     const signUpJSX = <div>
-      <h2>Sign up</h2>
-      <AuthForm type='login' onComplete={ this.handleLogin}/>
-      <p>Do not have an account?</p>
+      <h2>Sign up!</h2>
+      <AuthForm type='signup' onComplete={ this.handleLogin}/>
+      <p>Already have an account?</p>
       <Link to ='/login'>Login to our app</Link>
     </div>
 
@@ -54,7 +54,7 @@ class AuthLanding extends React.Component {
       <h2> LOGIN! </h2>
       <AuthForm type='login' onComplete={ this.handleLogin}/>
       <p>Do not have an account?</p>
-      <Link to='/signup'>Sign up to our app</Link>
+      <Link to='/signup'>Sign up for our app</Link>
     </div>
 
     const { location } = this.props;
