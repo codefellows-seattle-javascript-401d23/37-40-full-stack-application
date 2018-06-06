@@ -1,0 +1,54 @@
+@import 'vars';
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+}
+
+h1,h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+p {
+  margin-left: 50px;
+}
+
+.auth-form {
+  background-color: $box-color;
+  width: 800px;
+  margin: auto;
+  display: block;
+}
+
+input {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  background-color: $background-color;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+img {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.links {
+  background-color: $box-color;
+  padding: 10px;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
