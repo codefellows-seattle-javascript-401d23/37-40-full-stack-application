@@ -13,7 +13,7 @@ export const removeTokenAction = () => ({
 export const signupRequest = user => (store) => {
   console.log('____SIGNUP_USER_______', user);
   return superagent.post(`${API_URL}${routes.SIGNUP_ROUTE}`)
-    .send(user)
+    .send(user.username, user.password, user.email)
     .then((response) => {
       return store.dispatch(setTokenAction(response.text));
     });

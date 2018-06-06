@@ -79,8 +79,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  doLoginProm: user => dispatch(authActions.signupRequest(user)),
-  doSignUpProm: user => dispatch(authActions.loginRequest(user)),
+  doSignUpProm: user => dispatch(authActions.signupRequest(user)),
+  doLoginProm: user => dispatch(authActions.loginRequest(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthLanding);
