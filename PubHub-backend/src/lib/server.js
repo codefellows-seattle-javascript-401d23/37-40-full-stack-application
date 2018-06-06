@@ -1,5 +1,6 @@
 'use strict';
 
+import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import cowsay from 'cowsay';
@@ -17,6 +18,7 @@ const { MessagingResponse } = require('twilio').twiml;
 const app = express();
 let server = null;
 
+app.use(cors({credential: true, origin: process.env.CORS_ORIGINS}));
 app.use(loggerMiddleware);
 app.use(searchRoute);
 app.use(stopRoutes);

@@ -17,8 +17,8 @@
  
 ## Feature Tasks 
 [ ] Implement Login/Signup functionality for your mid-term project.
-[ ] Use react/redux best practices
-[ ] Add reporter and thunk middleware to your redux store
+[x] Use react/redux best practices
+[x] Add reporter and thunk middleware to your redux store
 [ ] make async action creators for making ajax requests to your backend
 [ ] make sync action creators for updating your app store
 
