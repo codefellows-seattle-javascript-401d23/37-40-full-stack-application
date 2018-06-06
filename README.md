@@ -1,42 +1,106 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+# 37-40 Full Stack Application
+**Author**: Lacy Hogan
+**Version**: 1.0.0
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+## Overview
+This application allows a user to create an account and then use those credentials to log in.
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
+## Getting Started
+The following devDependencies need to be installed on the front-end:
+- "babel-core": "^6.26.3",
+  "babel-eslint": "^8.2.3",
+  "babel-loader": "^7.1.4",
+  "babel-plugin-transform-react-jsx-source": "^6.22.0",
+  "babel-preset-env": "^1.7.0",
+  "babel-preset-react": "^6.24.1",
+  "babel-preset-stage-0": "^6.24.1",
+  "css-loader": "^0.28.11",
+  "dotenv": "^5.0.1",
+  "enzyme": "^3.3.0",
+  "enzyme-adapter-react-16": "^1.1.1",
+  "eslint": "^4.19.1",
+  "eslint-config-airbnb-base": "^12.1.0",
+  "eslint-plugin-import": "^2.12.0",
+  "eslint-plugin-jest": "^21.15.1",
+  "eslint-plugin-react": "^7.8.2",
+  "file-loader": "^1.1.11",
+  "html-webpack-plugin": "^3.2.0",
+  "jest": "^22.4.4",
+  "mini-css-extract-plugin": "^0.4.0",
+  "node-sass": "^4.9.0",
+  "prop-types": "^15.6.1",
+  "react": "^16.3.2",
+  "react-dom": "^16.3.2",
+  "react-redux": "^5.0.7",
+  "react-router-dom": "^4.2.2",
+  "react-test-renderer": "^16.4.0",
+  "redux": "^4.0.0",
+  "redux-devtools-extension": "^2.13.2",
+  "redux-mock-store": "^1.5.1",
+  "sass-loader": "^7.0.1",
+  "style-loader": "^0.21.0",
+  "superagent": "^3.8.3",
+  "uuid": "^3.2.1",
+  "webpack": "^4.8.3",
+  "webpack-cli": "^2.1.3",
+  "webpack-dev-server": "^3.1.4",
+  "webpack-merge": "^4.1.2"
+
+The following devDependencies need to be installed on the front-end:
+- "babel-cli": "^6.26.0",
+  "babel-eslint": "^8.2.3",
+  "babel-preset-env": "^1.7.0",
+  "babel-register": "^6.26.0",
+  "bluebird": "^3.5.1",
+  "eslint": "^4.19.1",
+  "eslint-config-airbnb-base": "^12.1.0",
+  "eslint-plugin-import": "^2.11.0",
+  "eslint-plugin-jest": "^21.15.1",
+  "http-errors": "^1.6.3",
+  "jest": "^22.4.3",
+  "superagent": "^3.8.3"
+
+The following dependencies need to be installed on the front-end:
+- "babel-preset-stage-0": "^6.24.1",
+  "bcrypt": "^2.0.1",
+  "body-parser": "^1.18.3",
+  "cors": "^2.8.4",
+  "crypto": "^1.0.1",
+  "dotenv": "^5.0.1",
+  "express": "^4.16.3",
+  "faker": "^4.1.0",
+  "fs-extra": "^6.0.1",
+  "jsonwebtoken": "^8.2.1",
+  "mongoose": "^5.1.1",
+  "node-schedule": "^1.3.0",
+  "twilio": "^3.17.0",
+  "winston": "^3.0.0-rc5"
+
+package.json scripts must include on the front-end:
+- "test": "eslint . && jest --coverage",
+  "watch": "webpack-dev-server --config webpack.dev.js"
   
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+package.json scripts must include on the back-end:
+- "test": "eslint . && jest --coverage --forceExit --runInBand",
+  "dbon": "mkdir -p ./db && mongod --dbpath ./db",
+  "dboff": "killall mongod",
+  "build": "babel src -d build",
+  "start": "babel src -d build && node index.js"
 
-#### Components
-```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
-```
+To start mondo, open your terminal (anywhere) and enter net start MongoDB
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+To start the server, open your terminal in the back-end and enter npm run start
 
-##  Documentation  
-Write a description of the project in your README.md
+To start the server, open your terminal in the front-end and enter npm run watch
+
+To run the tests, enter npm run test in your terminal
+
+## Architecture
+This application uses JavaScript, React and sass libraries
+
+## Change Log
+06-05-2018 3:30pm - Application able to create an account and log.
+06-05-2018 5:30pm - CSS style added.
+
+## Credits and Collaborations
+Seth Donohue and Melanie Downing
