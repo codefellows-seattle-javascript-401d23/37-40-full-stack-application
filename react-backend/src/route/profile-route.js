@@ -11,8 +11,6 @@ const profileRouter = new Router();
 const jsonParser = json();
 
 profileRouter.post('/profiles', bearerAuthMiddleware, jsonParser, (request, response, next) => {
-  console.log(request.body, 'this is the request body');
-
   if (!request.account) {
     return next(new HttpError(400, 'AUTH - invalid request'));
   }
