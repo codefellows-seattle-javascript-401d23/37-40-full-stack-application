@@ -27,7 +27,7 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    let { type } = this.props:
+    let { type } = this.props;
 
     type = type === 'login' ? type : 'signup';
 

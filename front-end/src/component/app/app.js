@@ -4,7 +4,7 @@ import AuthRedirect from '../auth-redirect/auth-redirect';
 import Dashboard from '../dashboard/dashboard';
 import AuthLanding from '../auth-landing/auth-landing';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
         <div className='app'>

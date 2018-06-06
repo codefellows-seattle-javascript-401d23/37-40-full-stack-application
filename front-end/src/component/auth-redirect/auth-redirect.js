@@ -22,7 +22,7 @@ class AuthRedirect extends React.Component {
     }
     return (
         <div>
-          { destionationRoute ? <Redirect to={ destinationRoute}/>: undefined }
+          { destinationRoute ? <Redirect to={ destinationRoute }/>: undefined }
         </div>
     );
   }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import TodoForm from '../todo-form/todo-form';
-import * as todoActions from '../../actions/todo-actions.js';
+// import TodoForm from '../todo-form/todo-form';
+// import * as todoActions from '../../actions/todo-actions.js';
 
 class Dashboard extends React.Component {
 
@@ -15,21 +15,6 @@ class Dashboard extends React.Component {
     return (
         <div className='dashboard'>
           <h2> DASHBOARD </h2>
-          <TodoForm
-          onComplete={todoCreate} {todoUpdate}
-          buttonText='Create Todo'
-        />
-        {
-          todos.map((todo) => {
-          return (
-              <div key={todo._id}>
-                <p>{todo.title}</p>
-                <button onClick={() => todoDelete(todo)}>remove</button>
-                <button onClick={() => todoUpdate(todo)}>update</button>
-              </div>
-            );
-          })
-        }
       </div>
     );
   }

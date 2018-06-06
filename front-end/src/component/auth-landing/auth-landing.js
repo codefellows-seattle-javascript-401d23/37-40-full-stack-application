@@ -83,4 +83,4 @@ const mapDispatchToProps = dispatch => ({
   doSignUpProm: user => dispatch(authActions.loginRequest(user)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthLanding);
