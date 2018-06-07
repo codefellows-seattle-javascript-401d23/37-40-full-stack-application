@@ -1,5 +1,6 @@
 'use strict';
 
+import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import logger from './logger';
@@ -12,6 +13,7 @@ import errorMiddleware from './error-middleware';
 const app = express();
 let server = null;
 
+app.use(cors({ credentials: true, origin: process.env.CORS_ORIGIN }));
 app.use(loggerMiddleware); // logger middleware at the app-level
 
 app.use(authRoutes);

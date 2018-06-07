@@ -23,6 +23,7 @@ authRouter.post('/signup', jsonParser, (request, response, next) => {
       return account.pCreateLoginToken();
     })
     .then((token) => {
+      response.cookie('X-Carl-Lab-Token', token, { maxAge: 900000 });
       logger.log(logger.INFO, 'AUTH - returning a 200 code and a token');
       return response.json({ token });
     })
