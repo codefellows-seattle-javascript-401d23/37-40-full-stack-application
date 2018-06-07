@@ -1,28 +1,11 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+# Lab 37 
+Author: Ryan Groesch
+Version 1.2.0
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+# Overview
+This application has a fully functional backend that allows the use of a pubcrawl application that can geolocate you and suggest a route to follow based on your price and number of stops. 
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
-
-#### Components
+## Components
 ```
 Provider
   App
@@ -38,5 +21,6 @@ Provider
   * If the user is not logged in they should be forced to remain on the landing route(s)
   * If the user is logged in they should not permitted to remain on the landing route(s)
 
-##  Documentation  
-Write a description of the project in your README.md
+# Changes
+6/5/2018 - skelton completed and basic form functionality
+6/6/2018 - cookies for user sessions have been implemented 
