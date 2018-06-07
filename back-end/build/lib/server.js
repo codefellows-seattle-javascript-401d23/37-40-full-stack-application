@@ -17,6 +17,10 @@ var _cowsay = require('cowsay');
 
 var _cowsay2 = _interopRequireDefault(_cowsay);
 
+var _cors = require('cors');
+
+var _cors2 = _interopRequireDefault(_cors);
+
 var _logger = require('./logger');
 
 var _logger2 = _interopRequireDefault(_logger);
@@ -56,6 +60,7 @@ var MessagingResponse = require('twilio').twiml.MessagingResponse;
 var app = (0, _express2.default)();
 var server = null;
 
+app.use((0, _cors2.default)());
 app.use(_loggerMiddleware2.default);
 app.use(_searchRoute2.default);
 app.use(_stopRoute2.default);

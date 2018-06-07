@@ -38,33 +38,32 @@ class AuthLanding extends React.Component {
 
   render() {
     const rootJSX = <div>
-      <h2> Welcome to our app</h2>
-      <Link to='/signup'>Sign up for our app</Link>
-      <Link to='/login'>Login to our app</Link>
-    </div>
+      <h2> WELCOME TO OUR APP!! </h2>
+      <Link to='/signup'> Sign up to our app</Link>
+      <Link to='/login'> Login to our app</Link>
+    </div>;
 
     const signUpJSX = <div>
-      <h2>Sign up!</h2>
-      <AuthForm type='signup' onComplete={ this.handleLogin}/>
-      <p>Already have an account?</p>
-      <Link to ='/login'>Login to our app</Link>
-    </div>
+      <h2> SIGN UP! </h2>
+      <AuthForm onComplete= {this.handleSignup}/>
+      <p> Already have an account? </p>
+      <Link to='/login'> Login to our app</Link>
+    </div>;
 
     const loginJSX = <div>
       <h2> LOGIN! </h2>
       <AuthForm type='login' onComplete={ this.handleLogin}/>
-      <p>Do not have an account?</p>
-      <Link to='/signup'>Sign up for our app</Link>
-    </div>
+      <p> Do not  have an account? </p>
+      <Link to='/signup'> Sign up to our app</Link>
+    </div>;
 
     const { location } = this.props;
 
     return (
       <div className='landing'>
-        {location.pathname === routes.ROOT_ROUTE ? rootJSX : undefined}
-        {location.pathname === routes.SIGNUP_ROUTE ? signUpJSX : undefined}
-        {location.pathname === routes.LOGIN_ROUTE ? loginJSX : undefined}
-
+        {location.pathname === routes.ROOT_ROUTE ? rootJSX : undefined }
+        {location.pathname === routes.SIGNUP_ROUTE ? signUpJSX : undefined }
+        {location.pathname === routes.LOGIN_ROUTE ? loginJSX : undefined }
       </div>
     );
   }
@@ -82,7 +81,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  pDoSignup: user => dispatch(authActions.signUpRequest(user)),
+  pDoSignup: user => dispatch(authActions.signupRequest(user)),
   pDoLogin: user => dispatch(authActions.loginRequest(user)),
 });
 
