@@ -41,6 +41,7 @@ Back-end:
     NODE_ENV=development
     MONGODB_URI=mongodb://localhost/testing
     CORS_ORIGINS=http://localhost:8080
+    SECRET='longrandomstring'
     
 Front-end:
 
