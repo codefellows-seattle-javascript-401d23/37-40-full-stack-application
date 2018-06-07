@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import * as authActions from '../../actions/auth';
 
-import poundPuppyImg from '../../assets/puppyPound.png';
 import autoBind from '../../utils';
 import AuthForm from '../auth-form/auth-form';
 
@@ -35,15 +34,11 @@ class AuthLanding extends React.Component {
   
   render() {
     const rootJSX = <div>
-      <h2>WELCOME TO</h2>
-      <img src={poundPuppyImg} alt='pound-puppy'/>
-      <Link to='/signup' className='links'>Sign up</Link>
-      <Link to='/login' className='links'>Login</Link>
+      <h2>WELCOME TO POUND PUPPY ALERT</h2>
     </div>;
 
     const signupJSX = <div>
       <h2>SIGNUP!</h2>
-      <img src={poundPuppyImg} alt='pound-puppy'/>      
       <AuthForm onComplete={this.handleSignup}/>
       <p>Already have an account?</p>
       <Link to='/login' className='links'>Login</Link>
@@ -51,10 +46,9 @@ class AuthLanding extends React.Component {
     
     const loginJSX = <div>
       <h2>LOGIN!</h2>
-      <img src={poundPuppyImg} alt='pound-puppy'/>      
       <AuthForm type='login' onComplete={this.handleLogin}/>
       <p>Do not have an account?</p>
-      <Link to='/signup' className='links'>Sign up</Link>
+      <Link to='/signup' className='links'>Sign Up</Link>
     </div>;
     
     const { location } = this.props;

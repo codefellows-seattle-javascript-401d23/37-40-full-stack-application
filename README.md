@@ -101,6 +101,7 @@ This application uses JavaScript, React and sass libraries
 ## Change Log
 06-05-2018 3:30pm - Application able to create an account and log.
 06-05-2018 5:30pm - CSS style added.
+06-06-2018 5:30pm - Cookies added and login persists.
 
 ## Credits and Collaborations
 Seth Donohue and Melanie Downing
