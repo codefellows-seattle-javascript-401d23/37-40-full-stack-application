@@ -11,12 +11,18 @@ class AuthRedirect extends React.Component {
     const { pathname } = location;
 
     let destinationRoute = null;
-    let loggedIn = false;
-    if (localStorage.getItem('token') || token) loggedIn = true;
+    // let loggedIn = false;
+    // if (localStorage.getItem('token') || token) loggedIn = true;
+    //
+    // if (pathname === routes.LOGIN || pathname === routes.SIGNUP || pathname === routes.LANDING) {
+    //   if (loggedIn) destinationRoute = routes.DASHBOARD;
+    // } else if (!loggedIn) {
+    //   destinationRoute = routes.LANDING;
+    // }
 
     if (pathname === routes.LOGIN || pathname === routes.SIGNUP || pathname === routes.LANDING) {
-      if (loggedIn) destinationRoute = routes.DASHBOARD;
-    } else if (!loggedIn) {
+      if (token) destinationRoute = routes.DASHBOARD;
+    } else if (!token) {
       destinationRoute = routes.LANDING;
     }
 
