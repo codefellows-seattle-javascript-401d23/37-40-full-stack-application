@@ -23,7 +23,6 @@ export const signupRequest = user => (store) => {
     });
 };
 
-// Vinicio - request
 export const loginRequest = user => (store) => {
   return superagent.get(`${API_URL}${routes.LOGIN_ROUTE}`)
     .auth(user.username, user.password)

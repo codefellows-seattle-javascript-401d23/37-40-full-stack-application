@@ -21,7 +21,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Lab 36 Collin',
+    title: 'Lab 37+ Collin',
   }),
 
   new DefinePlugin({
