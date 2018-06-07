@@ -10,6 +10,7 @@ import thunk from './lib/redux-thunk';
 import reporter from './lib/redux-reporter';
 // import getUsername from './lib/local-storage';
 import App from './components/app/app';
+import './style/main.scss';
 
 // const retrievedState = getUsername();
 

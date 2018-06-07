@@ -30,7 +30,7 @@ Users can log in and sign up. On either, user will be redirected to their dashbo
 
 ## Using locally
 
-Fork and clone this repo. Run this application in Chrome and make sure you have the following extension downloaded on turned on: [Allow-Control-Allow-Origin:*](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
+Fork and clone this repo.
 
 ### 1. Set up .env files
 Create dotenv files in the back-end and front-end project directories:
@@ -40,6 +40,7 @@ Back-end:
     PORT=3000
     NODE_ENV=development
     MONGODB_URI=mongodb://localhost/testing
+    CORS_ORIGINS=http://localhost:8080
     
 Front-end:
 
