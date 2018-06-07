@@ -1,8 +1,9 @@
-# Lab 37 Full-Stack Auth
+# Lab 38 Full-Stack Token Management
 
 ## Overview
 
-This lab combines a previous backend project (Lab 16-19) and a react frontend. The frontend allows for Signup/Login functionality that hits the backend api account POST and GET routes with async action creators. Redux-reporter and redux-thunk middleware is included. 
+This lab combines a previous backend project (Lab 16-19) and a react frontend. The frontend allows for Signup/Login/Logout, including token persistence using cookies. The front end connects with the backend api POST and GET routes with async action creators via superagent. Redux-reporter and redux-thunk middleware is included. 
+
 
 ## Tech / Framework
 
@@ -24,6 +25,7 @@ This lab combines a previous backend project (Lab 16-19) and a react frontend. T
 - babel-preset-react
 - babel-preset-stage-0
 - babel-register
+- cors
 - css-loader
 - dotenv
 - enzyme
