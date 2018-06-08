@@ -94,7 +94,6 @@ class AuthForm extends React.Component {
           value={this.state.email}
           onChange={this.handleChange}
           onBlur={() => this.handleValidation('email', this.state.email)}
-          required
         />
         { this.state.emailDirty && <p className='error'>{this.state.emailErr}</p> }
       </div>;
@@ -109,7 +108,6 @@ class AuthForm extends React.Component {
           value={this.state.username}
           onChange={this.handleChange}
           onBlur={() => this.handleValidation('username', this.state.username)}
-          required
         />
         { this.state.usernameDirty && <p className='error'>{this.state.usernameErr}</p> }
         <input
@@ -119,7 +117,6 @@ class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
           onBlur={() => this.handleValidation('password', this.state.password)}
-          required
         />
         { this.state.passwordDirty && <p className='error'>{this.state.passwordErr}</p> }
         <button type='submit'>{ type }</button>
