@@ -1,42 +1,32 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+## Lab 38 - Full Stack Token Management
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+### Overview
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+This application allows users to sign up or login to the Bloomio API that was created during project week.
+Application is now populating a cookie when a client logs into the app. Logout functionality deletes cookie to preserve security.
 
-#### Components
+To run application, MongoDB and the server must be launched from the back-end repository while `npm run watch` must be run from the front-end repository.
+
+### Front End
+
+Built using React, Redux, and Webpack. `.env` file must be structured as follows:
+
 ```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
+API_URL=http://localhost:3000
+NODE_ENV=development
 ```
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+### Back End
 
-##  Documentation  
-Write a description of the project in your README.md
+Built using Node.js and integrated with MongoDB for persistence. `.env` file must be structured as follows:
+```
+PORT=3000
+MONGODB_URI=mongodb://localhost/testing1
+NODE_ENV=development
+DEBUG=true
+CORS_ORIGINS=http://localhost:8080
+BLOOMIO_SECRET=123412341234
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_BUCKET=
+```
