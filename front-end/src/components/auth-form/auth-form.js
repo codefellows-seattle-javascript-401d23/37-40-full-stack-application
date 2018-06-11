@@ -32,7 +32,7 @@ class AuthForm extends React.Component {
       return null;
     }
 
-    switch (name) { // name can be 'username', 'password', or 'email'
+    switch (name) { 
       case 'username':
       // you can define your own logic
         if (value.length < MIN_NAME_LENGTH) {
@@ -40,7 +40,7 @@ class AuthForm extends React.Component {
         }
         return null;
       case 'email':
-        if (!validator.isEmail) {
+        if (!validator.isEmail(value)) {
           return 'You must provide a valid email';
         }
         return null;
