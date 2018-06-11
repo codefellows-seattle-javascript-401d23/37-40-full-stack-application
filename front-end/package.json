@@ -23,6 +23,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cors": "^2.8.4",
     "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
@@ -53,7 +54,8 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "cors": "^2.8.4"
   },
   "keywords": [],
   "author": "",

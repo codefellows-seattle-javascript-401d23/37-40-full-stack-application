@@ -60,7 +60,10 @@ var MessagingResponse = require('twilio').twiml.MessagingResponse;
 var app = (0, _express2.default)();
 var server = null;
 
-app.use((0, _cors2.default)());
+app.use((0, _cors2.default)({
+  origin: 'http://localhost:8080',
+  credentials: true
+}));
 app.use(_loggerMiddleware2.default);
 app.use(_searchRoute2.default);
 app.use(_stopRoute2.default);

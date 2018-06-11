@@ -33,7 +33,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var userRouter = new _express.Router();
 var jsonParser = (0, _bodyParser.json)();
 
+// add cookie
 userRouter.post('/signup', jsonParser, function (request, response, next) {
+  console.log('hello there');
   return _user2.default.create(request.body.username, request.body.password, request.body.email).then(function (user) {
     delete request.body.password;
     _logger2.default.log(_logger2.default.INFO, 'USER - creating a TOKEN HERE');
@@ -41,6 +43,7 @@ userRouter.post('/signup', jsonParser, function (request, response, next) {
     return user.createTokenProm();
   }).then(function (token) {
     _logger2.default.log(_logger2.default.INFO, 'USER - 200 code and a Token');
+    response.cookie('x-Auth', token, { maxAge: 90000 });
     return response.json({ token: token });
   }).then().catch(next);
 });

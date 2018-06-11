@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as routes from '../../routes';
-// import { ROOT_ROUTE } from '../../routes';
+// import {ROOT_ROUTE} from '../../routes';
 
 class AuthRedirect extends React.Component {
   render() {
@@ -17,11 +17,10 @@ class AuthRedirect extends React.Component {
       if (token) {
         destinationRoute = routes.DASHBOARD_ROUTE;
       }
-      // if logged in redirect to dashboard
-    } else if (!token) { // basically happens with EVERY OTHER ROUTE
+      // Vinicio says... - if the user is logged in, we'll redirect him/her to the dashboard
+    } else if (!token) {
       destinationRoute = routes.ROOT_ROUTE;
     }
-
     return (
       <div>
         { destinationRoute ? <Redirect to= { destinationRoute }/> : undefined }

@@ -11,7 +11,9 @@ import Profile from '../model/profile';
 const userRouter = new Router();
 const jsonParser = json();
 
+// add cookie
 userRouter.post('/signup', jsonParser, (request, response, next) => {
+  console.log('hello there');
   return User.create(request.body.username, request.body.password, request.body.email)
     .then((user) => {
       delete request.body.password;
@@ -21,6 +23,7 @@ userRouter.post('/signup', jsonParser, (request, response, next) => {
     })
     .then((token) => {
       logger.log(logger.INFO, 'USER - 200 code and a Token');
+      response.cookie('x-Auth', token, { maxAge: 90000 });
       return response.json({ token });
     })
     .then()
