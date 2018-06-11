@@ -18,7 +18,7 @@ const { MessagingResponse } = require('twilio').twiml;
 const app = express();
 let server = null;
 
-app.use(cors({credential: true, origin: process.env.CORS_ORIGINS}));
+app.use(cors({credentials: true, origin: process.env.CORS_ORIGINS}));
 app.use(loggerMiddleware);
 app.use(searchRoute);
 app.use(stopRoutes);
