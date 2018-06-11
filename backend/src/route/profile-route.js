@@ -25,6 +25,7 @@ profileRouter.get('/profile', bearerAuthMiddleware, (request, response, next) =>
 });
 
 profileRouter.put('/profile/:username', bearerAuthMiddleware, (request, response, next) => {
+  console.log('username sent', request.params.username);
   return Profile.findOne({ username: request.params.username })
     .then((profile) => {
       return Profile.findByIdAndUpdate(profile._id);
