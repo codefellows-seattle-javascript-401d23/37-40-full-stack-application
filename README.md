@@ -1,9 +1,11 @@
-## Lab 38 - Full Stack Token Management
+## Lab 39 - Form Validation
 
 ### Overview
 
 This application allows users to sign up or login to the Bloomio API that was created during project week.
 Application is now populating a cookie when a client logs into the app. Logout functionality deletes cookie to preserve security.
+
+Application now has constraints on what is required for a username and password to pass validation. Both username and passwords must contain at least 8 characters and password must have either a capital letter, number, or symbol to pass validation. Email must be in a valid email format.
 
 To run application, MongoDB and the server must be launched from the back-end repository while `npm run watch` must be run from the front-end repository.
 

@@ -34,7 +34,7 @@ class AuthForm extends React.Component {
       case 'username':
         if (value.length < MIN_NAME_LENGTH) {
           return `Username must be at least ${MIN_NAME_LENGTH} characters`;
-        }
+        } 
         return null;
       case 'email':
         if (!validator.isEmail(value)) {
@@ -44,6 +44,9 @@ class AuthForm extends React.Component {
       case 'password':
         if (value.length < MIN_PASSWORD_LENGTH) {
           return `Passwords must be at least ${MIN_PASSWORD_LENGTH} characters`;
+        } else if (!/[0-9]|[A-Z]|\W/.test(value)) {
+          return 'Password must contain one of the following: ' +
+          'numbers, uppercase letters, special characters';
         }
         return null;
       default:
