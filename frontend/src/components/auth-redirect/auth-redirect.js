@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import * as routes from '../../routes';
+import * as routes from '../../utils/routes';
 
 class AuthRedirect extends React.Component {
   render() {
