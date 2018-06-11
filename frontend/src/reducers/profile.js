@@ -1,7 +1,7 @@
 const validateProfile = (profile) => {
   if (!profile) throw new Error('profile is required');
-  const { username, bio } = profile;
-  if (!username || !bio) throw new Error('invalid profile');
+  const { username } = profile;
+  if (!username) throw new Error('invalid profile');
 };
 
 export default (state = null, action) => {

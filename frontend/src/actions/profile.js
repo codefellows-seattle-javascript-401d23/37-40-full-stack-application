@@ -8,11 +8,12 @@ const createBio = profile => ({
 
 const updateProfileRequest = profile => (store) => {
   const { token } = store.getState();
-  return superagent.put(`${API_URL}${routes.PROFILE}/${profile.username}`)
+  return superagent.put(`${API_URL}${routes.PROFILE}`)
     .set('Authorization', `Bearer ${token}`)
     .set('Content-Type', 'application/json')
-    .send(profile)
+    .send({ bio: profile.bio })
     .then((response) => {
+      console.log(response.body, 'response.body');
       return store.dispatch(createBio(response.body));
     })
     .catch(console.error);
