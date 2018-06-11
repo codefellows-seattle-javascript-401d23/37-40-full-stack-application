@@ -26,8 +26,7 @@ class Header extends React.Component {
       </nav>
       { 
         this.props.loggedIn ? 
-          <button onClick = { this.props.doLogout }>Logout</button> : todo
-          // TODO: finish this section
+          <button onClick = { this.props.doLogout }>Logout</button> : undefined
       }
     </header>
     );
@@ -47,4 +46,4 @@ const mapDispatchToProps = dispatch => ({
   doLogout: () => dispatch(authActions.logout()),
 });
 
-// TODO: export per vinicio's code
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

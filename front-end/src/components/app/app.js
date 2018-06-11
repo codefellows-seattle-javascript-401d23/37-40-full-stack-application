@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import Dashboard from '../dashboard/dashboard';
-import AuthLanding from '../auth-landing/auth-landing';
 import Header from '../header/header';
+import AuthLanding from '../auth-landing/auth-landing';
 
 class App extends React.Component {
   render() {

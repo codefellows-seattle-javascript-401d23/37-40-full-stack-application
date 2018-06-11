@@ -23,7 +23,9 @@ accountRouter.post('/signup', jsonParser, (request, response, next) => {
       return account.createToken();
     })
     .then((token) => {
+      // TODO: Implement cookie generator
       logger.log('logger.INFO', 'AUTH - returning a 200 code and a token.');
+      response.cookie('Bloomio-Token', token, { maxAge: 900000 });
       return response.json({ token });
     })
     .catch(next);

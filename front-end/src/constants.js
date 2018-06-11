@@ -1,2 +1,1 @@
-export const TOKEN_COOKIE_KEY = ''; //eslint-disable-line
-// TODO: Import cookie name
+export const TOKEN_COOKIE_KEY = 'Bloomio-Token'; //eslint-disable-line
