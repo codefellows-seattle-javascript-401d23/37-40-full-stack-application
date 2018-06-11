@@ -2,7 +2,7 @@
 ===
 
 ## Submission Instructions
-* Continue working from lab 38
+* Continue working from lab 39
  
 #### Feature Tasks 
 * Implament resource creation and update in your application
