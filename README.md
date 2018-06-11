@@ -1,8 +1,9 @@
-## Lab 37 - Full Stack Auth
+## Lab 38 - Full Stack Token Management
 
 ### Overview
 
 This application allows users to sign up or login to the Bloomio API that was created during project week.
+Application is now populating a cookie when a client logs into the app. Logout functionality deletes cookie to preserve security.
 
 To run application, MongoDB and the server must be launched from the back-end repository while `npm run watch` must be run from the front-end repository.
 
