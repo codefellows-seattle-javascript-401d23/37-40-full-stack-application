@@ -2,7 +2,7 @@
 
  
 ## Feature Tasks
-* This lab implements token persistency and logout functionality.
+* This lab adds form validation - a new npm package is installed: npm i -D validator
 * This project uses react/redux best practices
 
 
@@ -51,6 +51,7 @@ Add following dependencies to package.json and run npm i:
        "sass-loader": "^7.0.1",
        "style-loader": "^0.21.0",
        "uuid": "^3.2.1",
+       "validator": "^10.3.0",
        "webpack": "^4.8.3",
        "webpack-cli": "^2.1.3",
        "webpack-dev-server": "^3.1.4",
