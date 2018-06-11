@@ -1,42 +1,124 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+# 401 JS --  Lab 38 Full-Stack Token Management
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
  
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+## Feature Tasks
+* This lab implements token persistency and logout functionality.
+* This project uses react/redux best practices
 
-#### Components
+
+Front-end .env vars:
+
 ```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
+API_URL=http://localhost:3000
+NODE_ENV=development
+
 ```
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+To build app, make 2 directories for front-end and back-end.
+Add following dependencies to package.json and run npm i:
 
-##  Documentation  
-Write a description of the project in your README.md
+```
+
+     "devDependencies": {
+       "babel-core": "^6.26.3",
+       "babel-eslint": "^8.2.3",
+       "babel-loader": "^7.1.4",
+       "babel-preset-env": "^1.7.0",
+       "babel-preset-react": "^6.24.1",
+       "babel-preset-stage-0": "^6.24.1",
+       "cors": "^2.8.4",
+       "css-loader": "^0.28.11",
+       "dotenv": "^5.0.1",
+       "enzyme": "^3.3.0",
+       "enzyme-adapter-react-16": "^1.1.1",
+       "eslint": "^4.19.1",
+       "eslint-config-airbnb-base": "^12.1.0",
+       "eslint-plugin-import": "^2.12.0",
+       "eslint-plugin-jest": "^21.15.1",
+       "eslint-plugin-react": "^7.8.2",
+       "html-webpack-plugin": "^3.2.0",
+       "jest": "^22.4.4",
+       "mini-css-extract-plugin": "^0.4.0",
+       "node-sass": "^4.9.0",
+       "prop-types": "^15.6.1",
+       "react": "^16.3.2",
+       "react-dom": "^16.3.2",
+       "react-redux": "^5.0.7",
+       "react-router-dom": "^4.2.2",
+       "redux": "^4.0.0",
+       "redux-devtools-extension": "^2.13.2",
+       "redux-mock-store": "^1.5.1",
+       "sass-loader": "^7.0.1",
+       "style-loader": "^0.21.0",
+       "uuid": "^3.2.1",
+       "webpack": "^4.8.3",
+       "webpack-cli": "^2.1.3",
+       "webpack-dev-server": "^3.1.4",
+       "webpack-merge": "^4.1.2"
+     },
+     "dependencies": {
+       "superagent": "^3.8.3"
+     },
+
+```
+
+Add the following dependencies to the back end by running npm i
+
+```
+ "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "fs-extra": "^6.0.1",
+    "jest": "^22.4.3",
+    "superagent": "^3.8.3"
+  },
+  "dependencies": {
+    "artillery": "^1.6.0-15",
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "cowsay": "^1.3.0",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "graphhopper-js-api-client": "^0.9.0-4",
+    "http-errors": "^1.6.3",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.16",
+    "twilio": "^3.17.0",
+    "winston": "^3.0.0-rc4"
+  }
+```
+
+Add the following script to your .json front-end file:
+
+```
+"scripts": {
+    "watch": "webpack-dev-server --config webpack.dev.js",
+     "test": "eslint . && jest --coverage --forceExit --runInBand"
+  },
+```
+
+Add the following scripts to your .json back-end file:
+
+```
+ "scripts": {
+     "start": "node index.js",
+     "start-db": "mkdir -p ./db && mongod --dbpath ./db",
+     "stop-db": "killall mongod",
+     "test": "mocha"
+   },
+```
+
+To run program start up a terminal in the front-end and two terminals for the back-end.
+Start your back-end mongodb and node servers
+Start your front-end
+
+
