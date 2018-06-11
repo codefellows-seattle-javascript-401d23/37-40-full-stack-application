@@ -32,7 +32,7 @@ class ProfileForm extends React.Component {
           value={this.state.bio}
           onChange={this.handleChange}
         />
-        <button type='submit'>{ this.props.profile ? 'update' : 'add' } bio</button>
+        <button type='submit'>{ this.props.profile ? 'Update' : 'Add' } Bio</button>
       </form>
     );
   }

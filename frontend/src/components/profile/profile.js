@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import autobind from '../../utils/autobind';
 import ProfileForm from '../profile-form/profile-form';
-import * as routes from '../../utils/routes';
 import * as profileActions from '../../actions/profile';
 import './profile.scss';
 
@@ -29,16 +28,16 @@ class Profile extends React.Component {
       JSXEditing =
         <div>
           <ProfileForm profile={profile} onComplete={this.handleUpdate}/>
-          <button onClick={() => this.setState({ editing: false })}> cancel </button>
+          <button onClick={() => this.setState({ editing: false })}> Cancel </button>
         </div>;
       JSXDisplay =
         <div>
           <p>{ profile.bio }</p>
-          <button onClick={() => this.setState({ editing: true })}> edit </button>
+          <button onClick={() => this.setState({ editing: true })}> Edit Bio </button>
         </div>;
       JSXProfile =
         <div>
-          <h3>{ profile.username }</h3>
+          <h3>{ profile.username.toUpperCase() }</h3>
           { this.state.editing ? JSXEditing : JSXDisplay }
         </div>;
     }

@@ -13,7 +13,6 @@ const updateProfileRequest = profile => (store) => {
     .set('Content-Type', 'application/json')
     .send({ bio: profile.bio })
     .then((response) => {
-      console.log(response.body, 'response.body');
       return store.dispatch(createBio(response.body));
     })
     .catch(console.error);
