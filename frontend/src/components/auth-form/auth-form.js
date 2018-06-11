@@ -44,6 +44,15 @@ class AuthForm extends React.Component {
         if (value.length < MIN_PASSWORD_LENGTH) {
           return `Your password must be at least ${MIN_PASSWORD_LENGTH} characters long`;
         }
+        if (!/[0-9]/.test(value)) {
+          return 'Your password must include a number!';
+        }
+        if (!/[a-z]/.test(value)) {
+          return 'Your password must include a lowercase letter!';
+        }
+        if (!/[A-Z]/.test(value)) {
+          return 'Your password must include an UPPERCASE letter!';
+        }
         return null;
       default:
         return null;
@@ -73,10 +82,6 @@ class AuthForm extends React.Component {
         passwordDirty: true,
       });
     }
-
-
-    this.props.onComplete(this.state);
-    this.setState(emptyState);
   }
 
   render() {
