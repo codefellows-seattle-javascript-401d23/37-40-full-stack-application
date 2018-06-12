@@ -8,16 +8,11 @@ import * as clientPictureActions from '../../actions/client-pictures';
 
 class Dashboard extends React.Component {
 
-  componentDidMount() {
-    this.props.todosFetch();
-  }
-
   render() {
-    const { todos, todoCreate, todoUpdate, todoDelete } = this.props;
     return (
         <div className='dashboard'>
           <h2> DASHBOARD </h2>
-          <PictureForm onComplete={this.props.doCreatePicture}/>
+          {/*<PictureForm onComplete={this.props.doCreatePicture}/>*/}
       </div>
     );
   }
@@ -29,10 +24,7 @@ Dashboard.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  doCreatePicture : picture => dispatch(clientPictureActions.createRequest(picture))
+  doCreatePicture: picture => dispatch(clientPictureActions.createRequest(picture)),
 });
 
-
-
 export default connect(null, mapDispatchToProps)(Dashboard);
-

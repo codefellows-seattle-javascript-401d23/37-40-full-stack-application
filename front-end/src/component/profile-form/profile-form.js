@@ -1,9 +1,9 @@
 import React from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import autoBind from '../../utils'
 
 const emptyState = {
-  bi: '',
+  bio: '',
 };
 
 class ProfileForm extends React.Component {

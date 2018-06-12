@@ -14,7 +14,7 @@ class Profile extends React.Component {
     this.state = {
       editing: false,
     };
-    autoBind.Call(this, Profile);
+    autoBind.call(this, Profile);
   }
 
   handleCreate(profile) {
@@ -83,4 +83,4 @@ const mapDispatchToProps = dispatch => ({
   profileUpdate: profile => dispatch(clientProfileActions.updateRequest(profile)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

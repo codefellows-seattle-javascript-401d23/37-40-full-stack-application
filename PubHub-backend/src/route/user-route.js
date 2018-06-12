@@ -20,10 +20,15 @@ userRouter.post('/signup', jsonParser, (request, response, next) => {
       return user.createTokenProm();
     })
     .then((token) => {
+      response.cookie('token', token, { maxAge: 900000 });
       logger.log(logger.INFO, 'USER - 200 code and a Token');
-      return response.json({ token });
+      response.send(token);
     })
-    .then()
+    // .then((token) => {
+    //
+    //   response.send(token);
+    //   logger.log(logger.INFO, `${token}`);
+    // })
     .catch(next);
 });
 
