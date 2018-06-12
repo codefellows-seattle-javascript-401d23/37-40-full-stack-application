@@ -40,7 +40,7 @@ class AuthForm extends React.Component {
         }
         return null;
       case 'email':
-        if (!validator.isEmail) {
+        if (!validator.isEmail(value)) {
           return 'You must provide a valid email';
         }
         return null;
