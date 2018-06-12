@@ -1,4 +1,4 @@
-## Lab 39 - Form Validation
+## Lab 41 - Authenticated Resource
 
 ### Overview
 
