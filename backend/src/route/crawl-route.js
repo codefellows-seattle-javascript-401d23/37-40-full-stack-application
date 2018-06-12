@@ -50,7 +50,12 @@ crawlRouter.get('/crawls/:username', bearerAuthMiddleware, (request, response, n
     .then((foundCrawls) => {
       const crawls = [];
       logger.log(logger.INFO, `Found crawl: ${foundCrawls}`);
-      foundCrawls.forEach(crawl => crawls.push({ name: crawl.name, id: crawl._id }));
+      foundCrawls.forEach(crawl => crawls.push({
+        name: crawl.name,
+        id: crawl._id,
+        votes: crawl.votes,
+        stops: crawl.stops,
+      }));
       return response.json(crawls);
     })
     .catch(next);

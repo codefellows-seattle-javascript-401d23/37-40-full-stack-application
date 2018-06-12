@@ -60,7 +60,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  profileUpdate: profile => dispatch(profileActions.updateProfileRequest(profile)),
+  profileUpdate: profile => dispatch(profileActions.addBioRequest(profile)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
