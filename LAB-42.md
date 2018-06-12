@@ -1,15 +1,14 @@
-401 JS --  Lab 41 - Authenticated Resource
+401 JS --  Lab 42 - Final Resource
 ===
 
 ## Submission Instructions
-* Continue working from lab 39
+* Continue working from lab 41
  
 #### Feature Tasks 
-* Implament resource creation and update in your application
-  * The resource needs to be accessed via bearer authentication
+* Implement another resource in your application
 * There are no constraints to the UI design 
+* Validate your forms using the `Pristine -> Dirty` validation pattern.
 * Your resource should be stored in a redux reducer
-* Load your resource on page load
 
 #### Test
 * Test your redux reducers and components. 
