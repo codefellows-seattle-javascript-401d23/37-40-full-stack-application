@@ -16,11 +16,11 @@
 * Develop your entire front-end under this folder
  
 ## Feature Tasks 
-[ ] Implement Login/Signup functionality for your mid-term project.
+[x] Implement Login/Signup functionality for your mid-term project.
 [x] Use react/redux best practices
 [x] Add reporter and thunk middleware to your redux store
-[ ] make async action creators for making ajax requests to your backend
-[ ] make sync action creators for updating your app store
+[x] make async action creators for making ajax requests to your backend
+[] make sync action creators for updating your app store
 
 #### Components
 ```

@@ -44,6 +44,7 @@ class AuthForm extends React.Component {
 
     return (
         <form className='auth-form' onSubmit={this.handleSubmit}>
+
           <input
             name='username'
             placeholder='username'
@@ -51,6 +52,7 @@ class AuthForm extends React.Component {
             value={this.state.username}
             onChange={this.handleChange}
           />
+
 
           <input
             name='password'
