@@ -11,7 +11,7 @@ Lab 41 is a version of pubHub that accepts HTTP CRUD requests into a Mongo Data 
 
 # Getting Started
 
-To use the Lab 3 application, [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) 
+To use the Lab 41 application, [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) 
 (Node Package manager), and [Mongo DB](https://docs.mongodb.com/manual/installation/)  will need
  to be locally installed.  Once Node.js, npm, Mongo DB have been installed, install the Lab 41 
  files.  
