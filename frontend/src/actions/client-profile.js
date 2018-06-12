@@ -8,21 +8,25 @@ const setProfile = profile => ({
 
 const createRequest = profile => (store) => {
   const { token } = store.getState();
+  const parsedToken = (JSON.parse(token));
+  console.log(parsedToken.token);
 
   return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
-    .set('Authorization', `Bearer ${token}`)
+    .set('Authorization', `Bearer ${parsedToken.token}`)
     .set('Content-Type', 'application/json')
     .send(profile)
     .then((response) => {
+      console.log(response, 'this is the response');
       return store.dispatch(setProfile(response.body));
     });
 };
 
 const updateRequest = profile => (store) => {
   const { token } = store.getState();
+  const parsedToken = (JSON.parse(token));
 
-  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile.id}`)
-    .set('Authorization', `Bearer ${token}`)
+  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
+    .set('Authorization', `Bearer ${parsedToken.token}`)
     .set('Content-Type', 'application/json')
     .send(profile)
     .then((response) => {
@@ -30,10 +34,11 @@ const updateRequest = profile => (store) => {
     });
 };
 
-const fetchRequest = profile => (store) => {
+const fetchRequest = () => (store) => {
   const { token } = store.getState();
+  // const parsedToken = (JSON.parse(token));
 
-  return superagent.get(`${API_URL}${routes.PROFILE_ROUTE}/${profile.id}`) // may need to change the url
+  return superagent.get(`${API_URL}${routes.PROFILE_ROUTE}/me`) // may need to change the url
     .set('Authorization', `Bearer ${token}`)
     .then((response) => {
       return store.dispatch(setProfile(response.body));

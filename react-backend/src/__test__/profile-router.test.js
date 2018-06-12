@@ -20,17 +20,17 @@ describe('POST /profiles', () => {
         return superagent.post(`${apiUrl}/profiles`)
           .set('Authorization', `Bearer ${accountSetMock.token}`)
           .send({
-            mantra: 'I like coffee',
-            firstName: 'Carl',
-            lastName: 'Olson',
+            bio: 'I like coffee',
+            username: 'Carl',
+            // lastName: 'Olson',
           });
       })
       .then((response) => {
         expect(response.status).toEqual(200);
         expect(response.body.account).toEqual(accountMock.account._id.toString());
-        expect(response.body.firstName).toEqual('Carl');
+        expect(response.body.username).toEqual('Carl');
         expect(response.body.lastName).toEqual('Olson');
-        expect(response.body.mantra).toEqual('I like coffee');
+        expect(response.body.bio).toEqual('I like coffee');
       });
   });
 
@@ -40,7 +40,7 @@ describe('POST /profiles', () => {
         return superagent.post(`${apiUrl}/profiles`)
           .set('Authorization', `Bearer ${accountSetMock.token}`)
           .send({
-            mantra: 'I like coffee',
+            bio: 'I like coffee',
           });
       })
       .then(Promise.reject)
@@ -55,7 +55,7 @@ describe('POST /profiles', () => {
         return superagent.post(`${apiUrl}/profiles`)
           .set('Authorization', 'Bearer')
           .send({
-            mantra: 'I like coffee',
+            bio: 'I like coffee',
           });
       })
       .then(Promise.reject)

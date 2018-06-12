@@ -1,8 +1,12 @@
-# Lab 38 Full-Stack Token Management
+# Lab 41 Full-Stack Application - Authenticated Resource
 
 ## Overview
 
 This lab combines a previous backend project (Lab 16-19) and a react frontend. The frontend allows for Signup/Login/Logout, including token persistence using cookies. The front end connects with the backend api POST and GET routes with async action creators via superagent. Redux-reporter and redux-thunk middleware is included. 
+
+Form validation is included, using the npm package ```validator``` for the email, and switch statements to ensure the username is at least 6 characters long, and that the password is at least 6 characters long, includes at least one number, one uppercase letter, and one lowercase letter.
+
+After signing up, users can create profiles with a bio, via a POST route that requires bearer authentication.
 
 
 ## Tech / Framework

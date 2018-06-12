@@ -11,11 +11,14 @@ const profileRouter = new Router();
 const jsonParser = json();
 
 profileRouter.post('/profiles', bearerAuthMiddleware, jsonParser, (request, response, next) => {
+  console.log('hello');
   if (!request.account) {
     return next(new HttpError(400, 'AUTH - invalid request'));
   }
+  console.log(request.body, 'this is the request', request.account);
   return new Profile({
-    firstname: request.body.firstname,
+    username: request.account.username,
+    bio: request.body.bio,
     account: request.account._id,
   }).save()
     .then((profile) => {
@@ -31,6 +34,18 @@ profileRouter.get('/profiles/:id', bearerAuthMiddleware, (request, response, nex
       if (!profile) {
         return next(new HttpError(400, ' no profile AUTH - invalid request'));
       }
+      logger.log(logger.INFO, 'Returning a 200 status code and requested Profile');
+      return response.json(profile);
+    })
+    .catch(next);
+});
+
+profileRouter.get('/profiles/me', bearerAuthMiddleware, (request, response, next) => {
+  return Profile.findOne({ account: request.account.id })
+    .then((profile) => {
+      // if (!profile) {
+      //   return next(new HttpError(400, ' no profile AUTH - invalid request'));
+      // }
       logger.log(logger.INFO, 'Returning a 200 status code and requested Profile');
       return response.json(profile);
     })

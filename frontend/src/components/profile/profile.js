@@ -11,6 +11,9 @@ import autoBind from '../../utils/utils';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      editing: false,
+    };
     autoBind.call(this, Profile);
   }
 
@@ -32,39 +35,40 @@ class Profile extends React.Component {
       profile,
     } = this.props;
 
-    let JSXEditing = null;
-    let JSXDisplay = null;
+    // let JSXEditing = null;
+    // let JSXDisplay = null;
     let JSXProfile = null;
 
     if (profile) {
-      JSXEditing = 
-        <div>
-          <ProfileForm profile={profile} onComplete={this.handleUpdate} />
-          <button onClick={() => this.setState({ editing: false })}>Cancel</button>
-        </div>;
+      // JSXEditing = 
+      //   <div>
+      //     <ProfileForm profile={profile} onComplete={this.handleUpdate} />
+      //     <button onClick={() => this.setState({ editing: false })}>Cancel</button>
+      //   </div>;
 
-      JSXDisplay = 
-        <div>
-          <p>{profile.bio}</p>
-          <button onClick={() => this.setState({ editing: true })}>Edit</button>
-        </div>;
+      // JSXDisplay = 
+      //   <div>
+      //     <p>{profile.bio}</p>
+      //     <button onClick={() => this.setState({ editing: true })}>Edit</button>
+      //   </div>;
 
       JSXProfile = 
         <div>
-          <h2> {profile.username} </h2>
-          <h3> {profile.email} </h3>
-          {this.state.editing ? JSXEditing : JSXDisplay}
+          <h2> Username: {profile.username} </h2>
+          <h3> Bio: {profile.bio}</h3>
+          {/* {this.state.editing ? JSXEditing : JSXDisplay} */}
         </div>;
     }
 
     return (
       <div>
         <h2>Profile</h2>
-        { profile ? JSXProfile : <ProfileForm onComplete={this.handleCreate} /> };
+        { profile ? JSXProfile : <ProfileForm onComplete={this.handleCreate} /> }
       </div>
-    )
+    );
   }
 }
+
 
 Profile.propTypes = {
   profile: PropTypes.object,

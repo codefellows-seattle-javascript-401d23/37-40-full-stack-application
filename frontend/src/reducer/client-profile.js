@@ -3,10 +3,10 @@ const validateProfile = (profile) => {
     throw new Error('profile is required');
   }
   const {
-    username, email, bio, owner, 
+    username, bio, account, 
   } = profile;
 
-  if (!username || !email || !bio || !owner) {
+  if (!username || !bio || !account) {
     throw new Error('Invalid profile');
   }
   return undefined;

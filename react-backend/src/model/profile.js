@@ -3,9 +3,9 @@
 import mongoose from 'mongoose';
 
 const profileSchema = mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String },
-  mantra: { type: String },
+  username: { type: String, required: true },
+  // lastName: { type: String },
+  bio: { type: String },
   profileImage: { type: String },
   account: {
     type: mongoose.Schema.ObjectId,

@@ -12,10 +12,10 @@ const pCreateProfileMock = () => {
       resultMock.accountSetMock = accountSetMock;
 
       return new Profile({
-        mantra: faker.lorem.words(10),
+        bio: faker.lorem.words(10),
         profileImage: faker.random.image(),
-        lastName: faker.name.lastName(),
-        firstName: faker.name.firstName(),
+        // lastName: faker.name.lastName(),
+        username: faker.name.firstName(),
         account: accountSetMock.account._id, // This line sets up the relationship
       }).save();
     })
