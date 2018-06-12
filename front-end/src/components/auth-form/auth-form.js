@@ -1,12 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import validator from 'validator';
 import autoBind from './../../utils';
 
 const emptyState = {
   username: '',
+  usernameDirty: false,
+  usernameError: 'Username is Required',
+
   email: '',
+  emailDirty: false,
+  emailError: 'Email is Required',
+
   password: '',
+  passwordDirty: false,
+  passwordError: 'Password is Required',
 };
+const MIN_NAME_LENGTH = 6;
+const MAX_NAME_LENGTH = 12;
+const MIN_PASSWORD_LENGTH = 6;
+const MAX_PASSWORD_LENGTH = 12;
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -17,16 +30,56 @@ class AuthForm extends React.Component {
   //---------------------------------------------------------------
   // Member Functions
   //---------------------------------------------------------------
+  handleValidation(name, value) {
+    if (this.props.type === 'login') {
+      return null;
+    }
+    switch (name) { // Zachary - name can be 'username', 'password', 'email'
+      case 'username':
+        // Zachary - you can define your own logic
+        if (value.length < MIN_NAME_LENGTH || value.length > MAX_NAME_LENGTH) {
+          return `Your name must be at least ${MIN_NAME_LENGTH} characters long and no larger than ${MAX_NAME_LENGTH} characters`;
+        }
+        return null; // Zachary - A Switch statement MUST return a value
+      case 'email':
+        if (!validator.isEmail(value)) {
+          return 'You must provide a valid email';
+        }
+        return null;
+      case 'password':
+        if (value.length < MIN_PASSWORD_LENGTH || value.length > MAX_PASSWORD_LENGTH) {
+          return `Your password must be at least ${MIN_PASSWORD_LENGTH} characters long and no longer than ${MAX_PASSWORD_LENGTH}`;
+        }
+        return null; // Zachary - a Switch statement MUST return a value
+      default:
+        return null;
+    }
+  }
+
   handleChange(e) {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ 
+      [name]: value,
+      [`${name}Dirty`]: true,
+      [`${name}Error`]: this.handleValidation(name, value),
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    const { usernameError, emailError, passwordError } = this.state;
+
+    if (this.props.type === 'login' || (!usernameError && !passwordError && !emailError)) {
     this.props.onComplete(this.state);
     this.setState(emptyState);
+  } else {
+    this.setState({
+      usernameDirty: true,
+      emailDirty: true,
+      passwordDirty: true,
+    });
   }
+}
   //---------------------------------------------------------------
   // Life-cycle Hooks
   //---------------------------------------------------------------
@@ -37,19 +90,23 @@ class AuthForm extends React.Component {
     type = type === 'login' ? type : 'signup';
 
     const signupJSX =
+      <div>
+        { this.state.emailDirty ? <p>{ this.state.emailError }</p> : undefined }
       <input
         name='email'
         placeholder='email'
         type='email'
         value={this.state.email}
         onChange={this.handleChange}
-        />;
+        />
+      </div>;
 
     const signupRenderedJSX = (type !== 'login') ? signupJSX : undefined;
 
     return (
-      <form className='auth-form' onSubmit={this.handleSubmit} >
-      
+      <form className='auth-form' noValidate onSubmit={this.handleSubmit} >
+
+        { this.state.usernameDirty ? <p>{ this.state.usernameError} </p> : undefined }
         <input
           name='username'
           placeholder='username'
@@ -60,7 +117,9 @@ class AuthForm extends React.Component {
           
           {signupRenderedJSX}
           
+          { this.state.passwordDirty ? <p>{ this.state.passwordError} </p> : undefined }
           <input
+            className={ this.state.passwordDirty ? 'input-erorr' : ''}
             name='password'
             placeholder='password'
             type='password'
