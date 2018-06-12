@@ -22,7 +22,7 @@ const createRequest = fileDesc => (store) => {
     .field('description', fileDesc.description)
     .attach('photo', fileDesc.picture)
     .then((response) => {
-     return store.dispatch(create(response.body);
+     return store.dispatch(create(response.body))
     });
 };
 

@@ -79,7 +79,8 @@ handleSubmit(event) {
             name='description'
             value={this.state.description}
             onChange={this.handleChange}
-            <button type='submit'>Upload a Picture</button>
+          />
+            <button type='submit'> Upload a Picture </button>
         </form>
     );
   }

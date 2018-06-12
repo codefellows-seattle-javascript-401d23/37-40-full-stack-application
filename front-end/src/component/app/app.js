@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import Dashboard from '../dashboard/dashboard';
-import Profile from '../profile'
+import Profile from '../profile/profile';
 import Header from '../header';
 import AuthLanding from '../auth-landing/auth-landing';
 import * as clientProfileActions from '../../actions/client-profile';
