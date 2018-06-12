@@ -11,7 +11,7 @@ const accountRouter = new Router();
 const jsonParser = json();
 
 accountRouter.post('/signup', jsonParser, (request, response, next) => {
-  return Account.create(request.body.username, request.body.email, request.body.phonenumber, request.body.password)
+  return Account.create(request.body.username, request.body.email, request.body.phoneNumber, request.body.password)
     .then((account) => {
       delete request.body.password;
       logger.log(logger.INFO, 'AUTH - creating token');
@@ -20,7 +20,7 @@ accountRouter.post('/signup', jsonParser, (request, response, next) => {
     .then((token) => {
       response.cookie('PPA-Token', token, { maxAge: 900000 });
       logger.log(logger.INFO, 'AUTH - return 200 code');
-      return response.json({ token });
+      response.send(token);
     })
     .catch(next);
 });
@@ -33,7 +33,7 @@ accountRouter.get('/login', basicAuthMiddleware, (request, response, next) => {
     .then((token) => {
       logger.log(logger.INFO, 'responding with 200 status and token');
       response.cookie('PPA-Token', token, { maxAge: 900000 });
-      return response.json({ token });
+      response.send(token);
     })
     .catch(next);
 });

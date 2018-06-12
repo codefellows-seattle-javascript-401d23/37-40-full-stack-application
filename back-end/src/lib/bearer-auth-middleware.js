@@ -28,7 +28,7 @@ export default (request, response, next) => {
 
   return promisify(jsonWebToken.verify)(token, process.env.PUPPY_SECRET)
     .catch((error) => {
-      Promise.reject(new HttpError(401, `AUTH - jsonWebToken Error ${error}`));
+      return Promise.reject(new HttpError(401, `AUTH - jsonWebToken Error ${error}`));
     })
     .then((decryptedToken) => {
       return Account.findOne({ tokenSeed: decryptedToken.tokenSeed });
