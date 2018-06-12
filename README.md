@@ -1,4 +1,4 @@
-# LAB 37 PubHub application
+# LAB 38 PubHub application
 
 **Author**: Joshua Fredrickson
 
@@ -6,16 +6,16 @@
 
 # Overview
 
-Lab 37 is a version of pubHub that accepts HTTP CRUD requests into a Mongo Data Base.
+Lab 38 is a version of pubHub that accepts HTTP CRUD requests into a Mongo Data Base.
 
 
 # Getting Started
 
 To use the Lab 3 application, [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) 
 (Node Package manager), and [Mongo DB](https://docs.mongodb.com/manual/installation/)  will need
- to be locally installed.  Once Node.js, npm, Mongo DB have been installed, install the Lab 37 
+ to be locally installed.  Once Node.js, npm, Mongo DB have been installed, install the Lab 38 
  files.  
- Prior to starting the Lab 37 application, from the command line while you are in the Lab 36 file 
+ Prior to starting the Lab 38 application, from the command line while you are in the Lab 36 file 
  folder, enter the command `npm i`.  This will download all needed dependencies for the 
  application to run.   
 
