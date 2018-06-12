@@ -1,9 +1,11 @@
-# 401 JS --  Lab 38 Full-Stack Token Management
+# 401 JS --  Lab 41 - Authenticated Resource
 
  
 ## Feature Tasks
-* This lab adds form validation - a new npm package is installed: npm i -D validator
-* This project uses react/redux best practices
+Implement resource creation (profile) and update in your application
+The profile needs to be accessed via bearer authentication
+Profile should be stored in a redux reducer
+Load your profile on page load
 
 
 Front-end .env vars:
