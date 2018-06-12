@@ -4,6 +4,8 @@ This is a basic full-stack application using the PubHub API.
 
 Users can log in and sign up. On signup, passwords, usernames, and e-mails are validated. On either, user will be redirected to their dashboard.
 
+When logged in, users can generate a crawl by entering the longitude, latitude, budget, and desired number of stops. From here, users have the choice to give the crawl a name and save it  to their profile.
+
 ## Architecture
 - Coding style: AirBnb
 - Testing suite: jest
