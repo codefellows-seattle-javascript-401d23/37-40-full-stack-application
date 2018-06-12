@@ -6,7 +6,7 @@ import { DEF_PROFILE_ERR } from '../../utils/constants';
 const defaultState = {
   bio: '',
   bioDirty: false,
-  bioErr: DEF_PROFILE_ERR,
+  bioErr: null,
 };
 
 const MAX_BIO_LENGTH = 300;
@@ -23,20 +23,17 @@ class ProfileForm extends React.Component {
     this.setState({ bio: value });
   }
 
-  handleValidation(bio) {
-    let errMessage = null;
-    if (!bio) errMessage = DEF_PROFILE_ERR;
-    if (bio.length > MAX_BIO_LENGTH) errMessage = 'Max 300 characters';
-    return this.setState({
-      bioDirty: !(errMessage === null),
-      bioErr: errMessage,
-    });
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onComplete(this.state);
-    this.setState(defaultState);
+    const { bio } = this.state;
+    if (!bio || bio.length < 1) {
+      this.setState({ bioDirty: true, bioErr: DEF_PROFILE_ERR });
+    } else if (bio.length > MAX_BIO_LENGTH) {
+      this.setState({ bioDirty: true, bioErr: 'Max 300 characters' });
+    } else {
+      this.props.onComplete(this.state);
+      this.setState(defaultState);
+    }
   }
 
   render() {
@@ -47,9 +44,9 @@ class ProfileForm extends React.Component {
           name='bio'
           value={this.state.bio}
           onChange={this.handleChange}
-          onBlur={() => this.handleValidation(this.state.bio)}
         />
-        { this.state.bio && <p>{this.state.bio.length}</p>}
+        { this.state.bioDirty && <p className='error'>{this.state.bioErr}</p> }
+        { this.state.bio && <p>{this.state.bio.length}</p> }
         <button type='submit'>{ this.props.profile ? 'Update' : 'Add' } Bio</button>
       </form>
     );

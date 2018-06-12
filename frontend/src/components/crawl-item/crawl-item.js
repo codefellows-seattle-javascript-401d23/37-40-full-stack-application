@@ -6,7 +6,7 @@ class CrawlItem extends React.Component {
     const { crawl } = this.props;
     return (
       <li className='crawl-item'>
-        <h4>{crawl.name}</h4>
+        <h4>{crawl.name.toUpperCase()}</h4>
         <p>+{crawl.votes}</p>
         <p>Stops: {crawl.stops.length}</p>
       </li>

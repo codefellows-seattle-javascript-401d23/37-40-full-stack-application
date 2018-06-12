@@ -3,7 +3,7 @@ export default (state = [], { type, payload }) => {
     case 'CREATE_CRAWL':
       return payload;
     case 'TOKEN_REMOVE':
-      return {};
+      return [];
     default:
       return state;
   }

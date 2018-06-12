@@ -22,7 +22,6 @@ export default (req, res, next) => {
       return User.findOne({ tokenSeed: decryptedData.token });
     })
     .then((user) => {
-      console.log(user);
       if (!user) return next(new HttpError(400, 'BEAR AUTH: Invalid Request'));
       req.user = user;
       return next();
