@@ -18,7 +18,7 @@ export const removeTokenAction = () => ({
 export const logout = () => {
   // 1 - Remove Cookie
   //   - Remove Token from Local Storage 
-  // 2 - Remove Tooken from Store
+  // 2 - Remove Token from Store
   deleteCookie(TOKEN_COOKIE_KEY);
   return removeTokenAction();
 };

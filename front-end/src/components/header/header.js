@@ -13,14 +13,14 @@ class Header extends React.Component {
         <li><Link to={routes.ROOT_ROUTE}> Home </Link></li>
         <li><Link to={routes.LOGIN_ROUTE}> Login </Link></li>
         <li><Link to={routes.SIGNUP_ROUTE}> Signup </Link></li>
-      </ul>
+      </ul>;
     const JSXLoggedIn =
       <ul>
         <li><Link to={routes.DASHBOARD_ROUTE}> Dashboard </Link></li>
         <li><Link to={routes.PROFILE_ROUTE}> Profile </Link></li>
-      </ul>
+      </ul>;
 
-    return(
+    return (
         <header className='header'>
           <h1> SLUGGRAM! </h1>
           <nav>
@@ -46,7 +46,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  doLogout: () => dispatch(authActions.loginRequest()),
+  doLogout: () => dispatch(authActions.logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
