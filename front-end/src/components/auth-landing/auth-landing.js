@@ -83,7 +83,7 @@ const mapStateToProps = state => ({
 
 // Zachary - We need to log in and to sign up 
 const mapDispatchToProps = dispatch => ({
-  pDoSignup: user => dispatch(authActions.signUpRequest(user)),
+  pDoSignup: user => dispatch(authActions.signupRequest(user)),
   pDoLogin: user => dispatch(authActions.loginRequest(user)),
 });
 

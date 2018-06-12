@@ -30,6 +30,7 @@ class AuthForm extends React.Component {
   //---------------------------------------------------------------
   // Life-cycle Hooks
   //---------------------------------------------------------------
+  
   render() {
     let { type } = this.props;
 

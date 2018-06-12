@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import Dashboard from '../dashboard/dashboard';
+import Header from '../header/header';
 import AuthLanding from '../auth-landing/auth-landing';
 
 
@@ -19,6 +20,7 @@ class App extends React.Component {
       <div className='app'>
         <BrowserRouter>
           <div>
+            <Header/>
             <Route path='*' component={AuthRedirect}/>
             <Route exact path='/' component={AuthLanding}/>
             <Route exact path='/signup' component={AuthLanding}/>
