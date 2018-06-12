@@ -3,3 +3,7 @@ export const DEF_USERNAME_ERR = 'Username is required';
 export const DEF_PASSWORD_ERR = 'Password is required';
 export const DEF_EMAIL_ERR = 'E-mail is required';
 export const DEF_PROFILE_ERR = 'Bio is required';
+export const DEF_LAT_ERR = 'Latitude is required';
+export const DEF_LNG_ERR = 'Longitude is required';
+export const DEF_PRICE_ERR = 'Budget is required';
+export const DEF_STOPS_ERR = 'Number of stops is required';
