@@ -6,6 +6,7 @@ import Header from '../header/header';
 import Profile from '../profile/profile';
 import Landing from '../landing/landing';
 import Dashboard from '../dashboard/dashboard';
+import SearchPage from '../search-page/search-page';
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import * as profileActions from '../../actions/profile';
 
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route exact path='/login' component={Landing}/>
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/profile' component={Profile}/>
+            <Route exact path='/search' component={SearchPage}/>
           </div>
         </BrowserRouter>
       </div>
@@ -43,6 +45,7 @@ App.propTypes = {
 
 const mapStateToProps = state => ({
   loggedIn: !!state.token,
+  profile: state.profile,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -21,6 +21,7 @@ class Header extends React.Component {
       <ul>
         <Link to={routes.DASHBOARD}><li>Dashboard</li></Link>
         <Link to={routes.PROFILE}><li>Profile</li></Link>
+        <Link to={routes.SEARCH}><li>Create</li></Link>
         <li onClick={this.props.logout} className='right'>Log out</li>
       </ul>;
 

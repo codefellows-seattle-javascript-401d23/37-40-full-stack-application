@@ -12,6 +12,9 @@ export default (state = null, action) => {
       return payload;
     case 'TOKEN_REMOVE':
       return null;
+    case 'CRAWL_ADD':
+      payload.profile.crawls = [...payload.profile.crawls, payload.id];
+      return payload.profile;
     default:
       return state;
   }
