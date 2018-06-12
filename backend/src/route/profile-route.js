@@ -19,6 +19,7 @@ profileRouter.get('/profiles', bearerAuthMiddleware, (request, response, next) =
 });
 
 profileRouter.get('/profile', bearerAuthMiddleware, (request, response, next) => {
+  console.log(request.user);
   return Profile.findOne({ user: request.user._id })
     .then((profile) => {
       return response.json(profile);
