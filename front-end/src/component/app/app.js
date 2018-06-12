@@ -10,6 +10,7 @@ class App extends React.Component {
         <div className='app'>
           <BrowserRouter>
             <div>
+              <Header/>
               <Route path='*' component={AuthRedirect}/>
               <Route exact path='/' component={AuthLanding}/>
               <Route exact path='/signup' component={AuthLanding}/>
