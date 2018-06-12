@@ -1,16 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import autoBind from '../../utils';
+import Proptypes from 'prop-types';
+import autoBind from '../../utils'
 
 const emptyState = {
-  bio: '',
+  bi: '',
 };
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.profile ? props.profile : emptyState;
-    autoBind(this, ProfileForm);
+    autoBind.call(this, ProfileForm);
   }
 
   handleChange(event) {
@@ -27,14 +27,18 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-        <form className='profile-form' onSubmit={this.handleSubmit}>
-          <textarea
-            name='bio'
-            value={this.state.bio}
-            onChange={this.handleChange}
-          />
-          <button type='submit'>{this.props.profile ? 'update' : 'create'} profile </button>
-        </form>
+      <form
+        className='profile-form'
+        onSubmit={this.handleSubmit}>
+
+        <textarea
+          name='bio'
+          value={this.state.bio}
+          onChange={this.handleChange}
+        />
+
+        <button type='submit'> {this.props.profile ? 'update' : 'create'} profile </button>
+      </form>
     );
   }
 }
