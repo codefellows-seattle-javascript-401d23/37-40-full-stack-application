@@ -1,0 +1,34 @@
+@import '../../style/_vars.scss';
+
+form {
+  background: $hover;
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 10px 0px;
+
+  input{
+    width: 200px;
+    padding: 10px;
+  }
+
+  input, button {
+    margin: 10px auto;
+    display: block;
+    border-radius: 20px;
+    border: 1px solid black;
+  }
+
+  button {
+    width: 100px;
+    height: 20px;
+  }
+
+  button:hover {
+    color: white;
+    background: black;
+  }
+  p {
+    text-align: center;
+    font-size: 10px;
+  }
+}
