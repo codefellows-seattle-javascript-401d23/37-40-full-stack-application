@@ -1,42 +1,68 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+# Documentation
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+This is a basic full-stack application using the PubHub API.
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+Users can log in and sign up. On either, user will be redirected to their dashboard.
 
-#### Components
-```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
-```
+## Architecture
+- Coding style: AirBnb
+- Testing suite: jest
+- Transpiling: babel
+- Ajax requests: superagent
+- Continuous Integration: Travis CI
+- Other modules used: eslint, dotenv
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+#### Front-End
+- View Library: React
+- State management: redux
+- Module bundler: webpack
+- Styling: Sass
+- Other modules used: css-loader, enzyme, html-webpack-plugin, mini-css-extract-plugin, prop-types
 
-##  Documentation  
-Write a description of the project in your README.md
+#### Back-End
+- Tokens and encryption: bcrypt, jsonwebtoken
+- Web Framework: express
+- Pathfinding: GraphHopper
+- Database management: MongoDB/mongoose
+- Logging: winston
+- SMS integration: Twilio
+- Body parsing: body-parser
+
+## Using locally
+
+Fork and clone this repo. Run this application in Chrome and make sure you have the following extension downloaded on turned on: [Allow-Control-Allow-Origin:*](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
+
+### 1. Set up .env files
+Create dotenv files in the back-end and front-end project directories:
+
+Back-end:
+
+    PORT=3000
+    NODE_ENV=development
+    MONGODB_URI=mongodb://localhost/testing
+    SECRET='longrandomstring'
+    
+Front-end:
+
+    API_URL=http://localhost:3000
+    NODE_ENV=development
+    CDN_URL=/
+
+### 2. Turn on server
+In back-end folder of project directory:
+
+    npm i
+    npm run dbon
+    npm run start
+
+### 3. Open Browser
+In front-end folder:
+
+    npm i
+    npm run watch
+    
+When finished, kill all terminal operations.
+
+## Testing
+
+    npm test
