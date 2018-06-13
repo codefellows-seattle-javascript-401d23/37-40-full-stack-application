@@ -6,6 +6,7 @@ const emptyState = {
   bio: '',
 };
 
+// Zachary - this defines ES6 hierarchies
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
