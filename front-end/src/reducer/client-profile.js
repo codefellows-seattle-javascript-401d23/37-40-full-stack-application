@@ -2,14 +2,16 @@ const D23_001 = 'Profile required';
 const D23_002 = 'Invalid Profile';
 
 const validateProfile = (profile) => {
+  console.log(profile);
   if (!profile) {
     throw new Error(D23_001);
   }
   const {
-    username, email, bio, owner,
+    user,
   } = profile;
 
-  if (!username || !email || !bio || !owner) {
+  // if (!username || !user || !crawls) {
+  if (!user) {
     throw new Error(D23_002);
   }
   return undefined;

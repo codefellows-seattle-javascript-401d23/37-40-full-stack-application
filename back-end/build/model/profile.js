@@ -24,6 +24,9 @@ var profileSchema = _mongoose2.default.Schema({
   crawls: [{
     type: _mongoose2.default.Schema.Types.ObjectId,
     ref: 'crawl'
+  }],
+  bio: [{
+    type: String
   }]
 });
 

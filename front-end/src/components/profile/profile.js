@@ -15,8 +15,6 @@ class Profile extends React.Component {
     this.state = {
       editing: false,
     };
-
-    console.log('what is going on');
     autoBind.call(this, Profile);
   }
 
@@ -49,7 +47,8 @@ class Profile extends React.Component {
         </div>;
       JSXDisplay =
         <div>
-          <p>{profile.bio}</p>
+          <p>{profile.user}</p>
+          <p>{profile.username}</p>
           <button onClick={() => this.setState({ editing: true })}> Edit</button>
             </div>;
       JSXProfile =
@@ -62,7 +61,7 @@ class Profile extends React.Component {
     return (
       <div>
         <h1>Profile</h1>
-        {profile ? JSXProfile : <ProfileForm onComplete={this.handleCreate()}/>}
+        {profile ? JSXProfile : <ProfileForm onComplete={this.handleUpdate}/>}
       </div>
     );
   }
@@ -85,5 +84,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-
 

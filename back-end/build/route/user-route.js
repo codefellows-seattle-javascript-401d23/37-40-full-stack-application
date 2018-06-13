@@ -44,7 +44,7 @@ userRouter.post('/signup', jsonParser, function (request, response, next) {
   }).then(function (token) {
     _logger2.default.log(_logger2.default.INFO, 'USER - 200 code and a Token');
     response.cookie('x-Auth', token, { maxAge: 90000 });
-    return response.json({ token: token });
+    response.send(token);
   }).then().catch(next);
 });
 
@@ -53,7 +53,7 @@ userRouter.get('/login', _basicAuthMiddleware2.default, function (request, respo
     return next(new _httpErrors2.default(404, 'ERROR user not found'));
   }
   return request.user.createTokenProm().then(function (token) {
-    return response.json({ token: token });
+    return response.send(token);
   }).catch(next);
 });
 

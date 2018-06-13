@@ -6,10 +6,10 @@ const setProfile = profile => ({
   payload: profile,
 });
 
-const createRequest = profile => (store => {
+const createRequest = profile => (store) => {
   const { token } = store.getState();
 
-  return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
+  return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
     .set('Authorization', `Bearer ${token}`)
     .set('Content-Type', 'application/json')
     .send(profile)
@@ -20,10 +20,11 @@ const createRequest = profile => (store => {
 
 const updateRequest = profile => (store) => {
   const { token } = store.getState();
+  console.log('token', token);
 
-  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
+  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/me`)
     .set('Authorization', `Bearer ${token}`)
-    .set('Content-Type', 'application/json')
+    // .set('Content-Type', 'application/json')
     .send(profile)
     .then((response) => {
       return store.dispatch(setProfile(response.body));
@@ -33,7 +34,7 @@ const updateRequest = profile => (store) => {
 const fetchRequest = () => (store) => {
   const { token } = store.getState();
 
-  return superagent.get(`${API_URL}${routes.PROFILE_ROUTE}`)
+  return superagent.get(`${API_URL}${routes.PROFILE_ROUTE}/me`)
     .set('Authorization', `Bearer ${token}`)
     .then((response) => {
       return store.dispatch(setProfile(response.body));

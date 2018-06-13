@@ -4,6 +4,7 @@ import autoBind from '../../utils';
 
 const emptyState = {
   bio: '',
+  username: '',
 };
 
 class ProfileForm extends React.Component {
