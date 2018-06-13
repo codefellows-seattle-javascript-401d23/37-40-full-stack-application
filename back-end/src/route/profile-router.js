@@ -60,14 +60,12 @@ profileRouter.get('/profile/:id/needswater', bearerAuthMiddleware, (request, res
             const water = selectedPlant.isTimeToWater();
             if (water) {
               const needsWaterToday = 'You have plants that need to be watered today.';
-              // sendText(resObj.profile, needsWaterToday);
               return response.json(needsWaterToday);
             }
             return undefined;
           });
       });
       const noWaterToday = 'You have no plants that need watering today.';
-      // sendText(resObj.profile, noWaterToday);
       return response.json(noWaterToday);
     })
     .catch(next);
