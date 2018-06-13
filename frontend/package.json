@@ -7,6 +7,11 @@
     "test": "jest",
     "watch": "webpack-dev-server --config webpack.dev.js"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

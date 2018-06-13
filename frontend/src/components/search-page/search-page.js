@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../search-form/search-form';
-import CrawlList from '../stop-list/stop-list';
+import StopList from '../stop-list/stop-list';
 import autobind from '../../utils/autobind';
 import searchRequest from '../../actions/search';
 
@@ -21,7 +21,7 @@ class SearchPage extends React.Component {
       <div className='search-page'>
         {
           this.props.search.length > 0 ?
-          <CrawlList/> :
+          <StopList/> :
           <SearchForm onComplete={this.handleSearch}/>
         }
       </div>
