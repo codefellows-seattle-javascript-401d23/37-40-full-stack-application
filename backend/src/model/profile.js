@@ -19,6 +19,9 @@ const profileSchema = mongoose.Schema({
       ref: 'crawl',
     },
   ],
+  bio: {
+    type: String,
+  },
 });
 
 export default mongoose.model('profile', profileSchema);

@@ -1,5 +1,5 @@
 import superagent from 'superagent';
-import * as routes from '../routes';
+import * as routes from '../utils/routes';
 import { deleteCookie } from '../utils/cookie';
 import { COOKIE_TOKEN_KEY } from '../utils/constants';
 

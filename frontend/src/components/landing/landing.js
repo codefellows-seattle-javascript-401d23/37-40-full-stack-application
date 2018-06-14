@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as routes from '../../routes';
+import * as routes from '../../utils/routes';
 import * as authActions from '../../actions/auth';
 import autobind from '../../utils/autobind';
 import AuthForm from '../auth-form/auth-form';
