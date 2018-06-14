@@ -15,7 +15,7 @@ const pCreateImageMock = () => {
       resultMock.accountMock = mockAcctResponse;
 
       return new Image({
-        title: faker.lorem.words(5),
+        description: faker.lorem.words(5),
         url: faker.random.image(),
         account: resultMock.accountMock.account._id,
       }).save();

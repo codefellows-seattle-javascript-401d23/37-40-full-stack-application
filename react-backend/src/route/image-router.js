@@ -13,11 +13,12 @@ const multerUpload = multer({ dest: `${__dirname}/../temp` });
 const imageRouter = new Router();
 
 imageRouter.post('/images', bearerAuthMiddleware, multerUpload.any(), (request, response, next) => {
+  console.log(request, 'the request');
   if (!request.account) {
     return next(new HttpError(404, 'IMAGE ROUTER ERROR: not found'));
   }
 
-  if (!request.body.title || request.files.length > 1 || request.files[0].fieldname !== 'image') {
+  if (!request.body.description || request.files.length > 1 || request.files[0].fieldname !== 'image') {
     return next(new HttpError(400, 'IMAGE ROUTER ERROR, invalid request'));
   } 
 
@@ -27,7 +28,7 @@ imageRouter.post('/images', bearerAuthMiddleware, multerUpload.any(), (request, 
   return s3Upload(file.path, key)
     .then((awsUrl) => {
       return new Image({
-        title: request.body.title,
+        description: request.body.description,
         account: request.account._id,
         url: awsUrl,
       }).save();

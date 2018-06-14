@@ -23,11 +23,11 @@ describe('Testing routes at /images', () => {
           const { token } = mockResponse.accountMock; // same as above line
           return superagent.post(`${apiUrl}/images`)
             .set('Authorization', `Bearer ${token}`)
-            .field('title', 'image of dog')
+            .field('description', 'image of dog')
             .attach('image', `${__dirname}/assets/dog.jpg`)
             .then((response) => {
               expect(response.status).toEqual(200);
-              expect(response.body.title).toEqual('image of dog');
+              expect(response.body.description).toEqual('image of dog');
               expect(response.body._id).toBeTruthy();
               expect(response.body.url).toBeTruthy();
             });
@@ -43,7 +43,7 @@ describe('Testing routes at /images', () => {
           const { token } = mockResponse.accountMock;
           return superagent.post(`${apiUrl}/images`)
             .set('Authorization', `Bearer ${token}`)
-            .field('label', 'image of dog') // label instead of title
+            .field('label', 'image of dog') // label instead of description
             .attach('image', `${__dirname}/assets/dog.jpg`);
         })
         .then(Promise.reject)
@@ -57,7 +57,7 @@ describe('Testing routes at /images', () => {
         .then(() => {
           return superagent.post(`${apiUrl}/images`)
             .set('Authorization', 'Bearer')
-            .field('title', 'image of dog')
+            .field('description', 'image of dog')
             .attach('image', `${__dirname}/assets/dog.jpg`);
         })
         .then(Promise.reject)
@@ -78,7 +78,7 @@ describe('Testing routes at /images', () => {
         })
         .then((response) => {
           expect(response.status).toEqual(200);
-          expect(response.body.title).toEqual(accountInstance.image.title);
+          expect(response.body.description).toEqual(accountInstance.image.description);
           expect(response.body.url).toEqual(accountInstance.image.url);
         });
     });
