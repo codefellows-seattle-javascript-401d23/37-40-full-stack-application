@@ -6,17 +6,19 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducer from './reducers';
 import thunk from './lib/redux-thunk';
-import session from './lib/redux-session';
+// import session from './lib/redux-session';
 import reporter from './lib/redux-reporter';
-import getUsername from './lib/local-storage';
+// import getUsername from './lib/local-storage';
 import App from './components/app/app';
+import './style/main.scss';
 
-const retrievedState = getUsername();
+// const retrievedState = getUsername();
 
 const store = createStore(
   reducer,
-  retrievedState,
-  composeWithDevTools(applyMiddleware(thunk, reporter, session))
+  // retrievedState,
+  // composeWithDevTools(applyMiddleware(thunk, reporter, session))
+  composeWithDevTools(applyMiddleware(thunk, reporter)),
 );
 
 const container = document.createElement('div');

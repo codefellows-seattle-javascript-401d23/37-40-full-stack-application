@@ -1,0 +1,29 @@
+@import '../../style/_vars.scss';
+
+h1 {
+  margin: 10px;
+}
+
+ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: black;
+
+  .right {
+    float: right;
+  }
+
+  li {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  li:hover {
+    background: $hover;
+    cursor: pointer;
+  }
+}

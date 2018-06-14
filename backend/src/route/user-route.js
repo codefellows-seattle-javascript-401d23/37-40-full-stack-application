@@ -21,9 +21,10 @@ userRouter.post('/signup', jsonParser, (request, response, next) => {
     })
     .then((token) => {
       logger.log(logger.INFO, 'USER - 200 code and a Token');
-      return response.json({ token });
+      return response
+        .cookie('PH-Token', token)
+        .send({ token });
     })
-    .then()
     .catch(next);
 });
 
@@ -32,7 +33,11 @@ userRouter.get('/login', basicAuthMiddleware, (request, response, next) => {
     return next(new HttpError(404, 'ERROR user not found'));
   }
   return request.user.createTokenProm()
-    .then(token => response.json({ token }))
+    .then((token) => {
+      response
+        .cookie('PH-Token', token)
+        .send({ token });
+    })
     .catch(next);
 });
 

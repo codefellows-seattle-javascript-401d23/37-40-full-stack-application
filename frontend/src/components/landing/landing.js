@@ -8,6 +8,8 @@ import * as authActions from '../../actions/auth';
 import autobind from '../../utils/autobind';
 import AuthForm from '../auth-form/auth-form';
 
+import './landing.scss';
+
 class Landing extends React.Component {
   constructor(props) {
     super(props);
@@ -33,9 +35,9 @@ class Landing extends React.Component {
   render() {
     const landingJSX =
       <div>
-        <h2>Welcome to PubHub!</h2>
-        <Link to='/signup'>Sign up</Link>
-        <Link to='/login'>Log in</Link>
+        <h2>Welcome!</h2>
+        <p>PubHub helps you create the best pub crawl for your needs.
+          Log in or sign up to start making your personalized crawl.</p>
       </div>;
 
     const signupJSX =
