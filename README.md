@@ -85,6 +85,10 @@ PORT=3000
 DEBUG=true
 CORS_ORIGINS=http://localhost:8080
 MONGODB_URI=mongodb://localhost/testing
+MY_LAB_SECRET=<user-secret>
+AWS_BUCKET=<user-bucket-name>
+AWS_ACCESS_KEY_ID=<user-key-id>
+AWS_SECRET_ACCESS_KEY=<user-access-key>
 ```
 
 In the command line enter ```npm i``` to install required modules. In one terminal tab enter ```nodemon``` to start the server, and in another tab enter ```npm run dbon``` to start MongoDB. 
