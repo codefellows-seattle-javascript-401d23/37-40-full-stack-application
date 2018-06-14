@@ -19,7 +19,7 @@ export default (req, res, next) => {
   if (!token) return next(new HttpError(400, 'BEAR AUTH: Invalid Request'));
   return promisify(jsonWebToken.verify)(token, process.env.SECRET)
     .then((decryptedData) => {
-      return User.findOne({ tokenSeed: decryptedData.tokenSeed });
+      return User.findOne({ tokenSeed: decryptedData.token });
     })
     .then((user) => {
       if (!user) return next(new HttpError(400, 'BEAR AUTH: Invalid Request'));

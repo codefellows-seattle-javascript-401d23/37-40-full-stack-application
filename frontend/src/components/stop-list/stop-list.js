@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import CrawlItem from '../crawl-item/crawl-item';
+import Stop from '../stop/stop';
 import autobind from '../../utils/autobind';
 import { addCrawlToProfileRequest } from '../../actions/profile';
 import { DASHBOARD } from '../../utils/routes';
@@ -11,11 +11,11 @@ const defaultState = {
   crawlName: '',
 };
 
-class CrawlList extends React.Component {
+class StopList extends React.Component {
   constructor(props) {
     super(props);
     this.state = defaultState;
-    autobind.call(this, CrawlList);
+    autobind.call(this, StopList);
   }
 
   handleSave(crawl) {
@@ -40,10 +40,10 @@ class CrawlList extends React.Component {
     };
     return (
       <div>
-        <ul className='crawl-list'>
+        <ul className='stop-list'>
           {
             search.map((stop, index) => {
-              if (stop.name) return <CrawlItem stop={stop} key={index}/>;
+              if (stop.name) return <Stop stop={stop} key={index}/>;
               return null;
             })
           }
@@ -62,7 +62,7 @@ class CrawlList extends React.Component {
   }
 }
 
-CrawlList.propTypes = {
+StopList.propTypes = {
   search: PropTypes.array,
   onSave: PropTypes.func,
   profile: PropTypes.object,
@@ -77,4 +77,4 @@ const mapDispatchToProps = dispatch => ({
   onSave: data => dispatch(addCrawlToProfileRequest(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CrawlList);
+export default connect(mapStateToProps, mapDispatchToProps)(StopList);

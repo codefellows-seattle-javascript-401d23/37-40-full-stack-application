@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 
 class CrawlItem extends React.Component {
   render() {
-    const { stop } = this.props;
+    const { crawl } = this.props;
     return (
       <li className='crawl-item'>
-        <p>Name: {stop.name}</p>
-        <p>Address: {stop.address}</p>
+        <h4>{crawl.name.toUpperCase()}</h4>
+        <p>+{crawl.votes}</p>
+        <p>Stops: {crawl.stops.length}</p>
       </li>
     );
   }
 }
 
 CrawlItem.propTypes = {
-  stop: PropTypes.object,
+  crawl: PropTypes.object,
 };
 
 export default CrawlItem;

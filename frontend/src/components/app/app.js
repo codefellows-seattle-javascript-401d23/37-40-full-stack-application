@@ -9,11 +9,13 @@ import Dashboard from '../dashboard/dashboard';
 import SearchPage from '../search-page/search-page';
 import AuthRedirect from '../auth-redirect/auth-redirect';
 import * as profileActions from '../../actions/profile';
+import * as crawlActions from '../../actions/crawls';
 
 class App extends React.Component {
   componentDidMount() {
     if (this.props.loggedIn) {
       this.props.fetchProfile()
+        .then(() => this.props.fetchCrawls())
         .catch(console.error);
     }
   }
@@ -41,6 +43,7 @@ class App extends React.Component {
 App.propTypes = {
   loggedIn: PropTypes.bool,
   fetchProfile: PropTypes.func,
+  fetchCrawls: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -50,6 +53,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchProfile: () => dispatch(profileActions.fetchRequest()),
+  fetchCrawls: () => dispatch(crawlActions.fetchRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

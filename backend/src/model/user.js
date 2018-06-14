@@ -24,6 +24,11 @@ const userSchema = mongoose.Schema({
   phoneNumber: {
     type: String,
   },
+  tokenSeed: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   profile: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'profile',

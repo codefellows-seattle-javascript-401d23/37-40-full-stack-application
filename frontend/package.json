@@ -4,8 +4,13 @@
   "description": "",
   "main": "webpack.common.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "watch": "webpack-dev-server --config webpack.dev.js"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
+    }
   },
   "keywords": [],
   "author": "",
