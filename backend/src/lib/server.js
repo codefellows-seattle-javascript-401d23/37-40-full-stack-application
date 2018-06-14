@@ -4,7 +4,6 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import cowsay from 'cowsay';
-import cookieParser from 'cookie-parser';
 import logger from './logger';
 import crawlRoutes from '../route/crawl-route';
 import stopRoutes from '../route/stop-route';
@@ -25,7 +24,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(cookieParser());
 app.use(loggerMiddleware);
 app.use(searchRoute);
 app.use(stopRoutes);

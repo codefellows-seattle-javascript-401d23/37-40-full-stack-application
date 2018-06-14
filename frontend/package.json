@@ -49,6 +49,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "validator": "^10.3.0"
   }
 }

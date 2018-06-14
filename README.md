@@ -2,7 +2,7 @@
 
 This is a basic full-stack application using the PubHub API.
 
-Users can log in and sign up. On either, user will be redirected to their dashboard.
+Users can log in and sign up. On signup, passwords, usernames, and e-mails are validated. On either, user will be redirected to their dashboard.
 
 ## Architecture
 - Coding style: AirBnb
@@ -17,6 +17,7 @@ Users can log in and sign up. On either, user will be redirected to their dashbo
 - State management: redux
 - Module bundler: webpack
 - Styling: Sass
+- Email validation: validator
 - Other modules used: css-loader, enzyme, html-webpack-plugin, mini-css-extract-plugin, prop-types
 
 #### Back-End
@@ -25,6 +26,7 @@ Users can log in and sign up. On either, user will be redirected to their dashbo
 - Pathfinding: GraphHopper
 - Database management: MongoDB/mongoose
 - Logging: winston
+- CORS: cors
 - SMS integration: Twilio
 - Body parsing: body-parser
 
