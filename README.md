@@ -1,4 +1,4 @@
-# Lab 41 Full-Stack Application - Authenticated Resource
+# Lab 42 Full-Stack Application - Image Resource Upload
 
 ## Overview
 
@@ -8,6 +8,7 @@ Form validation is included, using the npm package ```validator``` for the email
 
 After signing up, users can create profiles with a bio, via a POST route that requires bearer authentication.
 
+Once logged in, the user can add a photo with a description to their AWS S3 bucket. 
 
 ## Tech / Framework
 

@@ -21,7 +21,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Lab 37 - Full Stack Application',
+    description: 'Lab 37 - Full Stack Application',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),
