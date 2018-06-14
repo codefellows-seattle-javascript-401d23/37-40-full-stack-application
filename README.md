@@ -1,42 +1,41 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+Lab 37: Full-Stack Auth
+===
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+**Author:** Jennifer Piper
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+This is a project to add a front-end to the existing Bloomio plant-minder back-end. It currently allows a user to sign up with username, email, and password, and allows them to log in again with the same credentials.
 
-#### Components
+## Getting Started
+Set up `.env` files, one in the front end and one in the back end:
+`/frontend/.env`:
 ```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
+NODE_ENV=development
+API_URL=http://localhost:3000
 ```
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+`/backend/.env`:
+```
+NODE_ENV=development
+PORT=3000
+DEBUG=true
+CORS_ORIGINS=http://localhost:8080
 
-##  Documentation  
-Write a description of the project in your README.md
+MONGODB_URI=mongodb://localhost/testing
+BLOOMIO_SECRET=topsecret
+```
+
+
+Install dependencies, run this command once from the `/frontend` directory, and once from the `/backend` directory:
+* `npm i`
+
+To start the database from `/backend`:
+* `npm run dbon`
+
+To start the server from `/backend`:
+* `npm start`
+
+To start webpack and activate the app from `/frontend`:
+* ` npm run watch`
+
+The app will open in a browser window and present signup and login options to the user.
+
