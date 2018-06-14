@@ -15,7 +15,7 @@ const setProfile = profile => ({
 const createRequest = profile => (store) => {
   const { token } = store.getState();
 
-  return superagent.post(`$API_URL}${routes.PROFILE_ROUTE}`)
+  return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
     .set('Authorization', `Bearer ${token}`) // HTTP HEADER, STRING
     .set('Content-Type', 'application/json')
     .send(profile)
