@@ -1,42 +1,33 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+# LAB 39 PubHub application
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+**Author**: Joshua Fredrickson
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+**Version**: 1.0.0 
 
-#### Components
-```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
-```
+# Overview
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+Lab 39 is a version of pubHub that accepts HTTP CRUD requests into a Mongo Data Base.
 
-##  Documentation  
-Write a description of the project in your README.md
+
+# Getting Started
+
+To use the Lab 39 application, [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) 
+(Node Package manager), and [Mongo DB](https://docs.mongodb.com/manual/installation/)  will need
+ to be locally installed.  Once Node.js, npm, Mongo DB have been installed, install the Lab 39 
+ files.  
+ Prior to starting the Lab 38 application, from the command line while you are in the Lab 39 file 
+ folder, enter the command `npm i`.  This will download all needed dependencies for the 
+ application to run.   
+
+
+# Architecture
+
+This application was deployed with the following technologies.
+Node.js, npm, body-parser, dotenv, express, faker, mongoose, winston, babel, superagent, 
+http-errors, jest, eslint, JavaScript, React, redux
+
+## Change Log
+
+
+## Thanks
+Special thanks to all of the Code Fellows staff and fellow 401-d23 students.
