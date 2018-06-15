@@ -1,4 +1,4 @@
-# LAB 38 PubHub application
+# LAB 39 PubHub application
 
 **Author**: Joshua Fredrickson
 
