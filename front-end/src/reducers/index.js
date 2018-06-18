@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import token from './token';
-import clientProfile from './client-profile';
+import profile from './profile';
+import dog from './dog';
 
-export default combineReducers({ token, clientProfile });
+export default combineReducers({ token, profile, dog });

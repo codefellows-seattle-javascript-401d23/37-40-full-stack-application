@@ -36,42 +36,42 @@ class ProfileForm extends React.Component {
         className='profile-form'
         onSubmit={this.handleSubmit}>
 
-        <textarea
+        <input
           name='firstName'
           placeholder='firstName'
           value={this.state.firstName}
           onChange={this.handleChange}
         />
 
-        <textarea
+        <input
           name='lastName'
           placeholder='lastName'
           value={this.state.lastName}
           onChange={this.handleChange}
         />
 
-        <textarea
+        <input
           name='breed'
           placeholder='breed'
           value={this.state.breed}
           onChange={this.handleChange}
         />
 
-        <textarea
+        <input
           name='age'
           placeholder='age'
           value={this.state.age}
           onChange={this.handleChange}
         />
 
-        <textarea
+        <input
           name='location'
           placeholder='location'
           value={this.state.location}
           onChange={this.handleChange}
         />
 
-        <textarea
+        <input
           name='phoneNumber'
           placeholder='phoneNumber'
           value={this.state.phoneNumber}

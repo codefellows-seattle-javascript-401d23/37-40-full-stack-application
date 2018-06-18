@@ -21,7 +21,7 @@ export default (state = null, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case 'CLIENT_PROFILE_SET': 
+    case 'PROFILE_SET': 
       validateProfile(payload);
       return payload;
     case 'TOKEN_REMOVE':

@@ -2,7 +2,7 @@ import superagent from 'superagent';
 import * as routes from '../routes';
 
 const setProfile = profile => ({
-  type: 'CLIENT_PROFILE_SET',
+  type: 'PROFILE_SET',
   payload: profile,
 });
 
