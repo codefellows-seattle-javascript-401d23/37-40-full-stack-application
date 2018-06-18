@@ -21,6 +21,17 @@ dogRouter.post('/dogs', jsonParser, (request, response, next) => {
     .catch(next);
 });
 
+dogRouter.get('dogs', (request, response, next) => {
+  return Dog.findOne({ dog: request.dog._id })
+    .then((dog) => {
+      if (!dog) {
+        return next(new HttpError(404, 'dogs not found'));
+      }
+      return response.send(dog);
+    })
+    .catch(next);
+});
+
 dogRouter.get('/dogs/:id', (request, response, next) => {
   return Dog.findById(request.params.id)
     .then((dog) => {
