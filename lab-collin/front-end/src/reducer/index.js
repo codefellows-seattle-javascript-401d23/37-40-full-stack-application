@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
+import clientPictures from './client-pictures';
 import token from './token';
 import clientProfile from './client-profile';
 
 export default combineReducers({ 
-  todos, 
+  clientPictures, 
   token,
   clientProfile,
 });

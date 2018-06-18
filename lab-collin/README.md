@@ -1,3 +1,11 @@
+Lab 41/42 (?)
+
+New resource added.
+Now authenticated users can upload pictures to Sluggram via a form.
+Users remain logged in on page refresh or new session.
+Profiles can no longer be created because of an unknown error.
+
+---
 
 Lab 40: 
 

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import * as clientProfileActions from '../../actions/client-profile';
 import * as routes from '../../routes';
 
-
 import autoBind from '../../utils';
 import ProfileForm from '../profile-form/profile-form';
 
