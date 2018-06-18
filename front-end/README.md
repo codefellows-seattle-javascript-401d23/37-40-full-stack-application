@@ -1,9 +1,10 @@
 ## Install the following npm packages before using this application:
 
-```npm i -D sass-loader node-sass css-loader style-loader html-webpack-plugin webpack webpack-cli webpack-dev-server webpack-merge babel-eslint babel-core babel-loader babel-preset-env babel-preset-react babel-preset-stage-0 react react-dom dotenv eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-jest eslint-plugin-react babel-plugin-transform-react-jsx-source file-loader superagent mini-css-extract-plugin react-router-dom prop-types react-test-renderer redux react-redux redux-devtools-extension redux-mock-store validator```
+```npm i -D sass-loader node-sass css-loader style-loader html-webpack-plugin webpack webpack-cli webpack-dev-server webpack-merge babel-eslint babel-core babel-loader babel-preset-env babel-preset-react babel-preset-stage-0 react react-dom dotenv eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-jest eslint-plugin-react babel-plugin-transform-react-jsx-source file-loader superagent mini-css-extract-plugin react-router-dom prop-types react-test-renderer redux react-redux redux-devtools-extension redux-mock-store uuid socket.io validator```
 
-## Lab40
-This application is focused around using cookies/tokens as authorization for a user to create an account and login/logout with their account's username and password.
+## Lab42
+This application is focused around using cookies/tokens as authorization for a user to create an account and login/logout with their account's username and password.  
+A new functionality with lab 42 came the ability for users to upload and attach an image from their local hard drive to their profile.  The **Choose File** button allows the user to select an image and the **Upload a Picture!** button allows the picture to be uploaded.
 
 **React** and **redux** best practices are used throughout the application.
 
