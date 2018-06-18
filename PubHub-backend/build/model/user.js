@@ -29,8 +29,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var userSchema = _mongoose2.default.Schema({
   username: {
     type: String,
-    required: true
-    // unique: true,
+    required: true,
+    unique: true
   },
   passwordHash: {
     type: String,
@@ -38,8 +38,8 @@ var userSchema = _mongoose2.default.Schema({
   },
   email: {
     type: String,
-    required: true
-    // unique: true,
+    required: true,
+    unique: true
   },
   phoneNumber: {
     type: String

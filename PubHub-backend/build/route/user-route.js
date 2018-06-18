@@ -40,9 +40,16 @@ userRouter.post('/signup', jsonParser, function (request, response, next) {
     new _profile2.default({ username: request.body.username, user: user._id }).save();
     return user.createTokenProm();
   }).then(function (token) {
+    response.cookie('token', token, { maxAge: 900000 });
     _logger2.default.log(_logger2.default.INFO, 'USER - 200 code and a Token');
-    return response.json({ token: token });
-  }).then().catch(next);
+    response.send(token);
+  })
+  // .then((token) => {
+  //
+  //   response.send(token);
+  //   logger.log(logger.INFO, `${token}`);
+  // })
+  .catch(next);
 });
 
 userRouter.get('/login', _basicAuthMiddleware2.default, function (request, response, next) {

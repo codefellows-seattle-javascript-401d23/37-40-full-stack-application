@@ -19,26 +19,22 @@ class AuthLanding extends React.Component {
 
   handleLogin(user) {
     return this.props.doLoginProm(user)
-        .then(() => {
-          this.props.history.push(routes.DASHBOARD_ROUTE);
-        })
-        .catch(console.error);
+      .then(() => {
+        this.props.history.push(routes.DASHBOARD_ROUTE);
+      })
+      .catch(console.error);
   }
 
   handleSignup(user) {
     return this.props.doSignUpProm(user)
-        .then(() => {
-          this.props.history.push(routes.DASHBOARD_ROUTE);
-        })
-        .catch(console.error);
+      .then(() => {
+        this.props.history.push(routes.DASHBOARD_ROUTE);
+      })
+      .catch(console.error);
   }
 
   render() {
     const rootJSX = <div>
-      <h2> PubHub </h2>
-      <Link to='/signup'>sign up</Link>
-      <br/>
-      <Link to='/login'>LOGIN</Link>
     </div>;
 
     const signUpJSX = <div>
@@ -55,7 +51,7 @@ class AuthLanding extends React.Component {
       <Link to='/signup'>sign up</Link>
     </div>;
 
-    const {location} = this.props;
+    const { location } = this.props;
 
     return (
         <div className='landing'>

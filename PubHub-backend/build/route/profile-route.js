@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _httpErrors = require('http-errors');
+
+var _httpErrors2 = _interopRequireDefault(_httpErrors);
+
 var _express = require('express');
 
 var _profile = require('../model/profile');
@@ -25,6 +29,13 @@ profileRouter.get('/profiles', _bearerAuthMiddleware2.default, function (request
       return allUsers.push(profile.username);
     });
     return response.json(allUsers);
+  }).catch(next);
+});
+
+profileRouter.get('/profiles/me', _bearerAuthMiddleware2.default, function (request, response, next) {
+  return _profile2.default.findOne({ user: request.user._id }).then(function (profile) {
+    if (!profile) return next(new _httpErrors2.default(404, 'ERROR user not found'));
+    return response.json(profile);
   }).catch(next);
 });
 
