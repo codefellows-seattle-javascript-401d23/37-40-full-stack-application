@@ -1,42 +1,97 @@
-# 401 JS --  Lab 37 Full-Stack Auth
+# Lab 39 Full Stack Application - Form Validation
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+## Overview
 
-## Configuration  
-#### backend/
-* Copy your mid-project into this directory
-  * Remove the .git folder from the backend project directory before committing
-  
-#### frontend/
-* Develop your entire front-end under this folder
- 
-## Feature Tasks 
-* Implement Login/Signup functionality for your mid-term project.
-* Use react/redux best practices
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax requests to your backend
-* make sync action creators for updating your app store
+This lab combines a previous backend project (Lab 16-19) and a react frontend. The frontend allows for Signup/Login/Logout, including token persistence using cookies. The front end connects with the backend api POST and GET routes with async action creators via superagent. Redux-reporter and redux-thunk middleware is included. 
 
-#### Components
+The Lab 39 iteration added form validation, using the npm package ```validator``` for the email, and switch statements to ensure the username is at least 6 characters long, and that the password is at least 6 characters long, includes at least one number, one uppercase letter, and one lowercase letter.
+
+
+## Tech / Framework
+
+- React
+- Redux
+- Babel
+- webpack
+- JavaScript
+- Node.js
+- Express
+- Superagent
+
+## Dependencies
+
+- babel-core
+- babel-eslint
+- babel-loader
+- babel-preset-env
+- babel-preset-react
+- babel-preset-stage-0
+- babel-register
+- cors
+- css-loader
+- dotenv
+- enzyme
+- enzyme-adapter-react-16
+- eslint
+- eslint-config-airbnb-base
+- eslint-plugin-import
+- eslint-plugin-jest
+- html-webpack-plugin
+- jest
+- mini-css-extract-plugin
+- node-sass
+- prop-types
+- react
+- react-dom
+- react-redux
+- react-router-dom
+- react-test-renderer
+- redux
+- redux-devtools-extension
+- sass-loader
+- style-loader
+- superagent
+- uuid
+- validator
+- webpack
+- webpack-cli
+- webpack-dev-server
+- webpack-merge
+
+Additional dependencies for the backend:
+- body-parser
+- express
+- faker
+- http-errors
+- mongoose
+- winston
+- aws-sdk
+- bcrypt
+- jsonwebtoken
+- multer
+
+## Getting Started
+
+Fork and clone this repo.
+
+#### Backend
+
+Create .env file that includes:
 ```
-Provider
-  App
-    AuthRedirect
-    Landing
-      // handle login and signup
-    Dashboard
-      // display main app
+NODE_ENV=development
+PORT=3000
+DEBUG=true
+CORS_ORIGINS=http://localhost:8080
+MONGODB_URI=mongodb://localhost/testing
 ```
 
-* Implement a Landing route that allows a user to signup and login to the application.
-* Manage the frontend routes based on the clients authorization
-  * If the user is not logged in they should be forced to remain on the landing route(s)
-  * If the user is logged in they should not permitted to remain on the landing route(s)
+In the command line enter ```npm i``` to install required modules. In one terminal tab enter ```nodemon``` to start the server, and in another tab enter ```npm run dbon``` to start MongoDB. 
 
-##  Documentation  
-Write a description of the project in your README.md
+#### Frontend
+
+Create .env file that includes:
+```
+API_URL=http://localhost:3000
+NODE_ENV=development
+```
+In a third terminal tab, enter ```npm i``` to install required modules. Enter ```npm run watch``` to open the application in the browser. 
